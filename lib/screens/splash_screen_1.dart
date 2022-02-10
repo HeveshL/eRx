@@ -16,8 +16,7 @@ class SplashScreen1 extends StatelessWidget {
         Navigator.of(context).pushReplacement(
           PageRouteBuilder(
             transitionDuration: const Duration(seconds: 1),
-            pageBuilder: (_, __, ___) => const SplashScreen2(),
-            
+            pageBuilder: (context, a1, a2) => const SplashScreen2(),
           ),
         );
       },
@@ -49,12 +48,15 @@ class SplashScreen1 extends StatelessWidget {
               tag: "pres",
               child: Visibility(
                 visible: false,
-                child: Text(
-                  "prescription",
-                  style: GoogleFonts.nunito(
-                    color: ColorPalette.honeyDew,
-                    fontSize: 48,
-                    fontWeight: FontWeight.w800,
+                child: Material(
+                  color: Colors.transparent,
+                  child: Text(
+                    "prescription",
+                    style: GoogleFonts.nunito(
+                      color: ColorPalette.honeyDew,
+                      fontSize: 48,
+                      fontWeight: FontWeight.w800,
+                    ),
                   ),
                 ),
               ),

@@ -36,12 +36,15 @@ class SplashScreen2 extends StatelessWidget {
             Hero(
               tag: "pres",
               child: Visibility(
-                child: Text(
-                  "prescription",
-                  style: GoogleFonts.nunito(
-                    color: ColorPalette.honeyDew,
-                    fontSize: 48,
-                    fontWeight: FontWeight.w800,
+                child: Material(
+                  color: Colors.transparent,
+                  child: Text(
+                    "prescription",
+                    style: GoogleFonts.nunito(
+                      color: ColorPalette.honeyDew,
+                      fontSize: 48,
+                      fontWeight: FontWeight.w800,
+                    ),
                   ),
                 ),
               ),

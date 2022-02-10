@@ -6,13 +6,6 @@ mixin SvgStrings {
       <stop offset="0" stop-color="#5add83"/>
       <stop offset="1" stop-color="#72fd9e"/>
     </radialGradient>
-    <filter id="e" x="0" y="0" width="151.073" height="140.559" filterUnits="userSpaceOnUse">
-      <feOffset dy="1" input="SourceAlpha"/>
-      <feGaussianBlur stdDeviation="5" result="blur"/>
-      <feFlood flood-color="#6bf396" flood-opacity="0.4"/>
-      <feComposite operator="in" in2="blur"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
   </defs>
   <g id="Group_10" data-name="Group 10" transform="translate(28.455 14.038) rotate(8)">
     <g transform="matrix(0.99, -0.14, 0.14, 0.99, -30.13, -9.94)" filter="url(#e)">
