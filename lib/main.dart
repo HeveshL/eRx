@@ -27,9 +27,7 @@ class MyApp extends StatelessWidget {
         future: _initialization,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
-            return const OnBoardingScreen(
-              pages: [],
-            );
+            return const SplashScreen1();
           } else {
             return const SplashScreen1();
           }
