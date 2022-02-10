@@ -1,27 +1,14 @@
-import 'package:erx/screens/splash_screen_2.dart';
 import 'package:erx/utils/color_palette.dart';
 import 'package:erx/utils/svg_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SplashScreen1 extends StatelessWidget {
-  const SplashScreen1({Key? key}) : super(key: key);
+class SplashScreen2 extends StatelessWidget {
+  const SplashScreen2({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    Future.delayed(
-      const Duration(seconds: 2),
-      () {
-        Navigator.of(context).pushReplacement(
-          PageRouteBuilder(
-            transitionDuration: const Duration(seconds: 1),
-            pageBuilder: (_, __, ___) => const SplashScreen2(),
-            
-          ),
-        );
-      },
-    );
     return Scaffold(
       backgroundColor: ColorPalette.charlestonGreen,
       body: Center(
@@ -40,6 +27,7 @@ class SplashScreen1 extends StatelessWidget {
                     angle: 8 * 22 / 7 / 180,
                     child: SvgPicture.string(
                       SvgStrings.logoE,
+                      height: 40,
                     ),
                   ),
                 ),
@@ -48,7 +36,6 @@ class SplashScreen1 extends StatelessWidget {
             Hero(
               tag: "pres",
               child: Visibility(
-                visible: false,
                 child: Text(
                   "prescription",
                   style: GoogleFonts.nunito(

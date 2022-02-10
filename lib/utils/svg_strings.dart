@@ -1,5 +1,5 @@
 mixin SvgStrings {
-  final String logoE = '''
+  static const String logoE = '''
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="151.073" height="140.559" viewBox="0 0 151.073 140.559">
   <defs>
     <radialGradient id="radial-gradient" cx="0.343" cy="0.317" r="0.958" gradientTransform="matrix(-0.568, -0.823, 0.707, -0.488, 0.855, 1.633)" gradientUnits="objectBoundingBox">
