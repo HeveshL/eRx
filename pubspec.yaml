@@ -37,6 +37,7 @@ dependencies:
 
 
 dev_dependencies:
+  flutter_launcher_icons: ^0.9.2
   flutter_test:
     sdk: flutter
 
@@ -88,3 +89,9 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+flutter_icons:
+  image_path: "assets/logo/logo.png"
+  android: true
+  adaptive_icon_background: "assets/logo/background.png"
+  adaptive_icon_foreground: "assets/logo/foreground.png"

@@ -1,5 +1,5 @@
 import 'package:erx/screens/onboarding_screen.dart';
-import 'package:erx/screens/splash_screen.dart';
+import 'package:erx/screens/splash_screen_1.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
               pages: [],
             );
           } else {
-            return const SplashScreen();
+            return const SplashScreen1();
           }
         },
       ),
