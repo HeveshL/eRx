@@ -5,64 +5,66 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SplashScreen1 extends StatelessWidget {
+class SplashScreen1 extends StatefulWidget {
   const SplashScreen1({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  State<SplashScreen1> createState() => _SplashScreen1State();
+}
+
+class _SplashScreen1State extends State<SplashScreen1> {
+  @override
+  void initState() {
+    super.initState();
     Future.delayed(
       const Duration(seconds: 2),
       () {
         Navigator.of(context).pushReplacement(
           PageRouteBuilder(
-            transitionDuration: const Duration(seconds: 1),
+            transitionDuration: const Duration(milliseconds: 700),
             pageBuilder: (context, a1, a2) => const SplashScreen2(),
           ),
         );
       },
     );
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorPalette.charlestonGreen,
-      body: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const SizedBox(
-                  height: 14,
+      body: Stack(
+        children: [
+          Center(
+            child: Hero(
+              tag: "e",
+              child: Transform.rotate(
+                angle: 8 * 22 / 7 / 180,
+                child: SvgPicture.string(
+                  SvgStrings.logoE,
                 ),
-                Hero(
-                  tag: "e",
-                  child: Transform.rotate(
-                    angle: 8 * 22 / 7 / 180,
-                    child: SvgPicture.string(
-                      SvgStrings.logoE,
-                    ),
-                  ),
-                ),
-              ],
+              ),
             ),
-            Hero(
+          ),
+          Positioned(
+            top: MediaQuery.of(context).size.height / 2,
+            left: MediaQuery.of(context).size.width / 2,
+            child: Hero(
               tag: "pres",
-              child: Visibility(
-                visible: false,
-                child: Material(
-                  color: Colors.transparent,
-                  child: Text(
-                    "prescription",
-                    style: GoogleFonts.nunito(
-                      color: ColorPalette.honeyDew,
-                      fontSize: 48,
-                      fontWeight: FontWeight.w800,
-                    ),
+              child: Material(
+                color: Colors.transparent,
+                child: Text(
+                  "prescription",
+                  style: GoogleFonts.nunito(
+                    color: ColorPalette.honeyDew.withOpacity(0),
+                    fontSize: 48,
+                    fontWeight: FontWeight.w800,
                   ),
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

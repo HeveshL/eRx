@@ -1,18 +1,18 @@
-import 'package:erx/screens/splash_screen_3.dart';
+import 'package:erx/screens/onboarding_screen.dart';
 import 'package:erx/utils/color_palette.dart';
 import 'package:erx/utils/svg_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SplashScreen2 extends StatefulWidget {
-  const SplashScreen2({Key? key}) : super(key: key);
+class SplashScreen3 extends StatefulWidget {
+  const SplashScreen3({Key? key}) : super(key: key);
 
   @override
-  State<SplashScreen2> createState() => _SplashScreen2State();
+  State<SplashScreen3> createState() => _SplashScreen3State();
 }
 
-class _SplashScreen2State extends State<SplashScreen2> {
+class _SplashScreen3State extends State<SplashScreen3> {
   @override
   void initState() {
     super.initState();
@@ -20,9 +20,10 @@ class _SplashScreen2State extends State<SplashScreen2> {
       const Duration(milliseconds: 1100),
       () {
         Navigator.of(context).pushReplacement(
-          PageRouteBuilder(
-            transitionDuration: const Duration(seconds: 1),
-            pageBuilder: (context, a1, a2) => const SplashScreen3(),
+          MaterialPageRoute(
+            builder: (context) => const OnBoardingScreen(
+              pages: [],
+            ),
           ),
         );
       },
@@ -33,10 +34,11 @@ class _SplashScreen2State extends State<SplashScreen2> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorPalette.charlestonGreen,
-      body: Stack(
-        children: [
-          Center(
-            child: Row(
+      body: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Column(
@@ -59,40 +61,37 @@ class _SplashScreen2State extends State<SplashScreen2> {
                 ),
                 Hero(
                   tag: "pres",
-                  child: Material(
-                    color: Colors.transparent,
-                    child: Text(
-                      "prescription",
-                      style: GoogleFonts.nunito(
-                        color: ColorPalette.honeyDew,
-                        fontSize: 48,
-                        fontWeight: FontWeight.w800,
+                  child: Visibility(
+                    child: Material(
+                      color: Colors.transparent,
+                      child: Text(
+                        "prescription",
+                        style: GoogleFonts.nunito(
+                          color: ColorPalette.honeyDew,
+                          fontSize: 48,
+                          fontWeight: FontWeight.w800,
+                        ),
                       ),
                     ),
                   ),
                 ),
               ],
             ),
-          ),
-          Center(
-            child: Padding(
-              padding: const EdgeInsets.only(top: 120.0),
-              child: Hero(
-                tag: "sub",
-                child: Material(
-                  color: Colors.transparent,
-                  child: Text(
-                    "India's first ever e-prescription service",
-                    style: GoogleFonts.nunito(
-                      color: ColorPalette.honeyDew.withOpacity(0),
-                      fontSize: 16,
-                    ),
+            Hero(
+              tag: "sub",
+              child: Material(
+                color: Colors.transparent,
+                child: Text(
+                  "India's first ever e-prescription service",
+                  style: GoogleFonts.nunito(
+                    color: ColorPalette.honeyDew,
+                    fontSize: 16,
                   ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
