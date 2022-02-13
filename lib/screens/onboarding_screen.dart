@@ -24,6 +24,7 @@ class OnBoardingScreen extends StatelessWidget {
               ],
             ),
             Positioned(
+              right: 0,
               child: TextButton(
                 onPressed: onComplete,
                 child: Text(
@@ -35,7 +36,6 @@ class OnBoardingScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              right: 0,
             ),
           ],
         ),
