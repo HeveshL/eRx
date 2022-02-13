@@ -1,3 +1,4 @@
+import 'package:erx/models/onboard_page_model.dart';
 import 'package:erx/screens/onboarding_screen.dart';
 import 'package:erx/utils/color_palette.dart';
 import 'package:erx/utils/svg_strings.dart';
@@ -21,8 +22,24 @@ class _SplashScreen3State extends State<SplashScreen3> {
       () {
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
-            builder: (context) => const OnBoardingScreen(
-              pages: [],
+            builder: (context) => OnBoardingScreen(
+              pages: [
+                OnBoardPageModel(
+                  svgString: SvgStrings.logoE,
+                  title:
+                      "Contactless and Convenient way of Managing all your Prescriptions at one place.",
+                ),
+                OnBoardPageModel(
+                  svgString: SvgStrings.logoE,
+                  title:
+                      "Contactless and Convenient way of Managing all your Prescriptions at one place.",
+                ),
+                OnBoardPageModel(
+                  svgString: SvgStrings.logoE,
+                  title:
+                      "Who doesn't love trees?! Go digital and take another step towards saving the planet.",
+                ),
+              ],
             ),
           ),
         );
