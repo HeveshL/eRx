@@ -1,5 +1,6 @@
 import 'package:erx/models/onboard_page_model.dart';
 import 'package:erx/screens/onboarding_screen.dart';
+import 'package:erx/screens/user_type_screen.dart';
 import 'package:erx/utils/color_palette.dart';
 import 'package:erx/utils/svg_strings.dart';
 import 'package:flutter/material.dart';
@@ -40,6 +41,15 @@ class _SplashScreen3State extends State<SplashScreen3> {
                       "Who doesn't love trees?! Go digital and take another step towards saving the planet.",
                 ),
               ],
+              onComplete: () {
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const UserTypeScreen();
+                    },
+                  ),
+                );
+              },
             ),
           ),
         );
