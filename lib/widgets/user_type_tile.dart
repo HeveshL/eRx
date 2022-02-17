@@ -12,6 +12,14 @@ class UserTypeTile extends StatelessWidget {
   final VoidCallback? onTap;
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        color: Colors.amber,
+        height: 50,
+        width: 50,
+        child: Text(userType),
+      ),
+    );
   }
 }
