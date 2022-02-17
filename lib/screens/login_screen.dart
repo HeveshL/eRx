@@ -1,3 +1,4 @@
+import 'package:erx/screens/otp_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -12,8 +13,22 @@ class LoginScreen extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            TextField(controller: _phoneNoController),
-            MaterialButton(onPressed: () {})
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: TextField(controller: _phoneNoController),
+            ),
+            MaterialButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return OtpScreen(phoneNo: _phoneNoController.text);
+                    },
+                  ),
+                );
+              },
+              child: const Text("Submit"),
+            ),
           ],
         ),
       ),
