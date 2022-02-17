@@ -32,6 +32,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_svg: ^1.0.3
+  fluttertoast: ^8.0.8
   google_fonts: ^2.3.1
 
 
