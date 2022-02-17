@@ -1,4 +1,3 @@
-
 import 'package:erx/screens/splash_screen_1.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -27,9 +26,15 @@ class MyApp extends StatelessWidget {
         future: _initialization,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
-            return const SplashScreen1();
+            return SplashScreen1(
+              key: UniqueKey(),
+              playAnimation: true,
+            );
           } else {
-            return const SplashScreen1();
+            return SplashScreen1(
+              key: UniqueKey(),
+              playAnimation: false,
+            );
           }
         },
       ),

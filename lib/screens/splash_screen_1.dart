@@ -6,7 +6,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SplashScreen1 extends StatefulWidget {
-  const SplashScreen1({Key? key}) : super(key: key);
+  const SplashScreen1({Key? key, required this.playAnimation})
+      : super(key: key);
+  final bool playAnimation;
 
   @override
   State<SplashScreen1> createState() => _SplashScreen1State();
@@ -16,17 +18,19 @@ class _SplashScreen1State extends State<SplashScreen1> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(
-      const Duration(seconds: 2),
-      () {
-        Navigator.of(context).pushReplacement(
-          PageRouteBuilder(
-            transitionDuration: const Duration(milliseconds: 700),
-            pageBuilder: (context, a1, a2) => const SplashScreen2(),
-          ),
-        );
-      },
-    );
+    if (widget.playAnimation) {
+      Future.delayed(
+        const Duration(seconds: 2),
+        () {
+          Navigator.of(context).pushReplacement(
+            PageRouteBuilder(
+              transitionDuration: const Duration(milliseconds: 700),
+              pageBuilder: (context, a1, a2) => const SplashScreen2(),
+            ),
+          );
+        },
+      );
+    }
   }
 
   @override
