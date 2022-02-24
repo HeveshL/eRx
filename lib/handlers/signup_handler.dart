@@ -22,10 +22,10 @@ class SignUpHandler extends StatelessWidget {
           if (snapshot.data!.data() == null) {
             // Not yet signed-up
 
-            return const NormalUserSignupScreen();
+            return NormalUserSignupScreen();
           } else {
             // Signed up
-            return SizedBox();
+            return const SizedBox();
           }
         } else {
           // Loading
