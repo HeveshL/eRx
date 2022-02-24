@@ -2,8 +2,7 @@ import 'package:erx/screens/otp_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
-  LoginScreen({Key? key, required this.userType}) : super(key: key);
-  final String userType;
+  LoginScreen({Key? key}) : super(key: key);
   final TextEditingController _phoneNoController = TextEditingController();
 
   @override

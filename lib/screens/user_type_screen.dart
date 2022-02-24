@@ -1,10 +1,12 @@
-import 'package:erx/screens/login_screen.dart';
 import 'package:erx/utils/svg_strings.dart';
 import 'package:erx/widgets/user_type_tile.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class UserTypeScreen extends StatelessWidget {
-  const UserTypeScreen({Key? key}) : super(key: key);
+  const UserTypeScreen({Key? key, required this.onComplete}) : super(key: key);
+  final VoidCallback onComplete;
 
   @override
   Widget build(BuildContext context) {
@@ -20,15 +22,7 @@ class UserTypeScreen extends StatelessWidget {
                 UserTypeTile(
                   svgString: SvgStrings.logoE,
                   userType: "Normal User",
-                  onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return LoginScreen(userType: "Normal User",);
-                        },
-                      ),
-                    );
-                  },
+                  onTap: () {},
                 ),
                 UserTypeTile(
                   svgString: SvgStrings.logoE,
@@ -51,6 +45,14 @@ class UserTypeScreen extends StatelessWidget {
                   onTap: () {},
                 ),
               ],
+            ),
+            TextButton(
+              onPressed: () {
+                Provider.of<SharedPreferences>(context,listen: false)
+                    .setString("userType", "normal-user");
+                onComplete();
+              },
+              child: const Text("Next"),
             ),
           ],
         ),
