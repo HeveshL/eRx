@@ -16,6 +16,7 @@ class OtpScreen extends StatefulWidget {
 
 class _OtpScreenState extends State<OtpScreen> {
   String _vId = '';
+  String otp = '';
 
   Future _sendCode() async {
     FirebaseAuth.instance.verifyPhoneNumber(
@@ -86,7 +87,6 @@ class _OtpScreenState extends State<OtpScreen> {
               Padding(
                 padding: const EdgeInsets.all(15.0),
                 child: OTPTextField(
-                  
                   fieldStyle: FieldStyle.box,
                   otpFieldStyle: OtpFieldStyle(
                     borderColor: ColorPalette.coolGrey,
@@ -103,24 +103,9 @@ class _OtpScreenState extends State<OtpScreen> {
                     color: ColorPalette.honeyDew,
                     fontWeight: FontWeight.bold,
                   ),
-
                   textFieldAlignment: MainAxisAlignment.spaceAround,
-                  onCompleted: (value) async {
-                    final PhoneAuthCredential credential =
-                        PhoneAuthProvider.credential(
-                      verificationId: _vId,
-                      smsCode: value,
-                    );
-                    await FirebaseAuth.instance
-                        .signInWithCredential(credential)
-                        .then(
-                      (value) {
-                        if (value.user != null) {
-                          Navigator.of(context).pop();
-                          showTextToast("Login Successful!");
-                        }
-                      },
-                    );
+                  onCompleted: (value) {
+                    otp = value;
                   },
                 ),
               ),
@@ -137,7 +122,25 @@ class _OtpScreenState extends State<OtpScreen> {
                     borderRadius: BorderRadius.circular(50),
                   ),
                   color: ColorPalette.malachiteGreen,
-                  onPressed: () {},
+                  onPressed: () async {
+                    if (otp.length == 6) {
+                      final PhoneAuthCredential credential =
+                          PhoneAuthProvider.credential(
+                        verificationId: _vId,
+                        smsCode: otp,
+                      );
+                      await FirebaseAuth.instance
+                          .signInWithCredential(credential)
+                          .then(
+                        (value) {
+                          if (value.user != null) {
+                            Navigator.of(context).pop();
+                            showTextToast("Login Successful!");
+                          }
+                        },
+                      );
+                    }
+                  },
                   child: Text(
                     "Next",
                     style: GoogleFonts.nunito(
