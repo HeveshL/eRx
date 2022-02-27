@@ -13,6 +13,14 @@ mixin SvgStrings {
     </g>
   </g>
 </svg>
-
 ''';
+
+  static const String stripes = '''
+<svg xmlns="http://www.w3.org/2000/svg" width="372.405" height="414.905" viewBox="0 0 372.405 414.905">
+  <line id="Line_8" data-name="Line 8" y1="273" x2="256" transform="translate(21.202 120.702)" fill="none" stroke="#707070" stroke-linecap="round" stroke-width="30" opacity="0.2"/>
+  <line id="Line_9" data-name="Line 9" y1="273" x2="256" transform="translate(43.202 21.202)" fill="none" stroke="#707070" stroke-linecap="round" stroke-width="30" opacity="0.2"/>
+  <line id="Line_10" data-name="Line 10" y1="273" x2="256" transform="translate(95.202 118.702)" fill="none" stroke="#707070" stroke-linecap="round" stroke-width="30" opacity="0.2"/>
+</svg>
+''';
+
 }
