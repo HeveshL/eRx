@@ -20,7 +20,7 @@ class LoginScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(
-                height: 50,
+                height: 75 ,
               ),
               const Expanded(
                 child: SizedBox(),
@@ -111,7 +111,7 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 50,
+                height: 75,
               ),
             ],
           ),

@@ -1,4 +1,5 @@
 import 'package:erx/screens/splash_screen_1.dart';
+import 'package:erx/utils/color_palette.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -20,6 +21,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          secondary: ColorPalette.malachiteGreen,
+          primary: ColorPalette.malachiteGreen,
+        ),
+      ),
       title: "eRx",
       debugShowCheckedModeBanner: false,
       home: FutureBuilder(

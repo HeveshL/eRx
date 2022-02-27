@@ -15,32 +15,31 @@ class OnBoardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorPalette.charlestonGreen,
-      body: SafeArea(
-        child: Stack(
-          children: [
-            const BackgroundStripes(),
-            PageView(
-              children: [
-                for (int i = 0; i < pages.length; i++)
-                  OnBoardPage(data: pages[i], index: i)
-              ],
-            ),
-            Positioned(
-              right: 0,
-              child: TextButton(
-                onPressed: onComplete,
-                child: Text(
-                  "Skip",
-                  style: GoogleFonts.nunito(
-                    color: ColorPalette.honeyDew,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                  ),
+      body: Stack(
+        children: [
+          const BackgroundStripes(),
+          PageView(
+            children: [
+              for (int i = 0; i < pages.length; i++)
+                OnBoardPage(data: pages[i], index: i)
+            ],
+          ),
+          Positioned(
+            top: 30,
+            right: 10,
+            child: TextButton(
+              onPressed: onComplete,
+              child: Text(
+                "Skip",
+                style: GoogleFonts.nunito(
+                  color: ColorPalette.honeyDew,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

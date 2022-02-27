@@ -36,7 +36,6 @@ dependencies:
   flutter_svg: ^1.0.3
   fluttertoast: ^8.0.8
   google_fonts: ^2.3.1
-  otp_text_field: ^1.1.2
   provider: ^6.0.2
   shared_preferences: ^2.0.13
 

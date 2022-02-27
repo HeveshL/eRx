@@ -1,8 +1,10 @@
+import 'package:erx/utils/color_palette.dart';
 import 'package:erx/utils/toast.dart';
+import 'package:erx/widgets/background_stripes.dart';
+import 'package:erx/widgets/otp_text_field.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:otp_text_field/otp_text_field.dart';
-import 'package:otp_text_field/style.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class OtpScreen extends StatefulWidget {
   final String phoneNo;
@@ -48,54 +50,60 @@ class _OtpScreenState extends State<OtpScreen> {
 
   @override
   void initState() {
-    _sendCode();
+    // _sendCode();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Colors.black,
-        body: SizedBox.expand(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Row(
-                  children: const [
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      'Enter OTP:',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                      ),
-                    ),
-                  ],
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      backgroundColor: ColorPalette.charlestonGreen,
+      body: Stack(
+        children: [
+          const BackgroundStripes(),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(
+                height: 75,
+              ),
+              const Expanded(
+                child: SizedBox(),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: 20.0,
                 ),
-                const SizedBox(
-                      height: 20,
-                    ),
-                OTPTextField(
+                child: Text(
+                  "Enter your phone number",
+                  style: GoogleFonts.nunito(
+                    fontSize: 25,
+                    color: ColorPalette.honeyDew,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: OTPTextField(
+                  
                   fieldStyle: FieldStyle.box,
                   otpFieldStyle: OtpFieldStyle(
-                    borderColor: Colors.white,
-                    backgroundColor: Colors.white,
-                    disabledBorderColor: Colors.white,
-                    enabledBorderColor: Colors.white,
-                    errorBorderColor: Colors.white,
-                    focusBorderColor: Colors.white,
+                    borderColor: ColorPalette.coolGrey,
+                    enabledBorderColor: ColorPalette.coolGrey,
+                    focusBorderColor: ColorPalette.malachiteGreen,
                   ),
-                  fieldWidth: 40,
-                  margin: EdgeInsets.zero,
-                  outlineBorderRadius: 8,
+                  fieldWidth: 45,
+                  // margin: EdgeInsets.zero,
+                  outlineBorderRadius: 14,
                   length: 6,
                   width: double.infinity,
-                  style: const TextStyle(fontSize: 14),
+                  style: GoogleFonts.nunito(
+                    fontSize: 20,
+                    color: ColorPalette.honeyDew,
+                    fontWeight: FontWeight.bold,
+                  ),
+
                   textFieldAlignment: MainAxisAlignment.spaceAround,
                   onCompleted: (value) async {
                     final PhoneAuthCredential credential =
@@ -115,10 +123,37 @@ class _OtpScreenState extends State<OtpScreen> {
                     );
                   },
                 ),
-              ],
-            ),
+              ),
+              const Expanded(
+                child: SizedBox(),
+              ),
+              Center(
+                child: MaterialButton(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 40,
+                    vertical: 8,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(50),
+                  ),
+                  color: ColorPalette.malachiteGreen,
+                  onPressed: () {},
+                  child: Text(
+                    "Next",
+                    style: GoogleFonts.nunito(
+                      fontSize: 25,
+                      color: ColorPalette.chineseBlack,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 75,
+              ),
+            ],
           ),
-        ),
+        ],
       ),
     );
   }
