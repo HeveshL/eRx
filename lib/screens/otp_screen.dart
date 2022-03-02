@@ -77,7 +77,7 @@ class _OtpScreenState extends State<OtpScreen> {
                   left: 20.0,
                 ),
                 child: Text(
-                  "Enter your phone number",
+                  "Enter OTP",
                   style: GoogleFonts.nunito(
                     fontSize: 25,
                     color: ColorPalette.honeyDew,
