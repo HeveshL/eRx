@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class NormalUserSignupScreen extends StatelessWidget {
-  NormalUserSignupScreen({Key? key}) : super(key: key);
+class PatientSignupScreen extends StatelessWidget {
+  PatientSignupScreen({Key? key}) : super(key: key);
 
   final TextEditingController _nameController = TextEditingController();
 

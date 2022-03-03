@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:erx/screens/normal_user_signup_screen.dart';
+import 'package:erx/screens/patient_signup_screen.dart';
 import 'package:erx/screens/temp_home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +22,7 @@ class SignUpHandler extends StatelessWidget {
         if (snapshot.hasData) {
           if (snapshot.data!.data() == null) {
             // Not yet signed-up
-            return NormalUserSignupScreen();
+            return PatientSignupScreen();
           } else {
             // Signed up
             // Todo: Check user type and route corresponding home screen
