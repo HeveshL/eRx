@@ -19,13 +19,13 @@ class OnBoardPage extends StatelessWidget {
     return Column(
       children: [
         Expanded(
-          flex: 6,
+          flex: 7,
           child: Center(
             child: SvgPicture.string(data.svgString),
           ),
         ),
         Expanded(
-          flex: 4,
+          flex: 3,
           child: Column(
             children: [
               Padding(
@@ -39,6 +39,28 @@ class OnBoardPage extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
+            ],
+          ),
+        ),
+        Expanded(
+          flex: 2,
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              for (int i = 0; i < 3; i++)
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                  child: Container(
+                    height: 10,
+                    width: 10,
+                    decoration: BoxDecoration(
+                      color: i == index
+                          ? ColorPalette.malachiteGreen
+                          : ColorPalette.honeyDew,
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                  ),
+                ),
             ],
           ),
         ),
