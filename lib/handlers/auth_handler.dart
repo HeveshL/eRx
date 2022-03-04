@@ -1,5 +1,7 @@
 import 'package:erx/handlers/user_type_handler.dart';
 import 'package:erx/screens/login_screen.dart';
+import 'package:erx/utils/color_palette.dart';
+import 'package:erx/widgets/customer_loader.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -29,15 +31,7 @@ class AuthHandler extends StatelessWidget {
                   child: const UserTypeHandler(),
                 );
               } else {
-                return const Scaffold(
-                  body: Center(
-                    child: SizedBox(
-                      height: 50,
-                      width: 50,
-                      child: CircularProgressIndicator(),
-                    ),
-                  ),
-                );
+                return const CustomLoader();
               }
             },
           );

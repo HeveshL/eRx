@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:erx/screens/patient_signup_screen.dart';
 import 'package:erx/screens/temp_home_screen.dart';
+import 'package:erx/widgets/customer_loader.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -17,7 +18,10 @@ class SignUpHandler extends StatelessWidget {
     ).getString("userType")!;
     final String _phoneNo = FirebaseAuth.instance.currentUser!.phoneNumber!;
     return StreamBuilder<DocumentSnapshot<Map<String, dynamic>>>(
-      stream: FirebaseFirestore.instance.collection(_userType).doc(_phoneNo).snapshots(),
+      stream: FirebaseFirestore.instance
+          .collection(_userType)
+          .doc(_phoneNo)
+          .snapshots(),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           if (snapshot.data!.data() == null) {
@@ -30,15 +34,7 @@ class SignUpHandler extends StatelessWidget {
           }
         } else {
           // Loading
-          return const Scaffold(
-            body: Center(
-              child: SizedBox(
-                height: 50,
-                width: 50,
-                child: CircularProgressIndicator(color: Colors.red),
-              ),
-            ),
-          );
+          return const CustomLoader();
         }
       },
     );
