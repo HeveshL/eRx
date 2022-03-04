@@ -23,7 +23,6 @@ class AuthHandler extends StatelessWidget {
             future: _spFuture,
             builder: (context, snapshot) {
               if (snapshot.hasData) {
-                // final String? _userType = snapshot.data!.getString("userType");
                 return Provider<SharedPreferences>(
                   create: (context) {
                     return snapshot.data!;
@@ -35,6 +34,10 @@ class AuthHandler extends StatelessWidget {
               }
             },
           );
+        }
+        // If stream is loading
+        else if (snapshot.connectionState != ConnectionState.done) {
+          return const CustomLoader();
         }
         // If user is not Logged in
         else {
