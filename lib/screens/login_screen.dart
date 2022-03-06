@@ -51,7 +51,6 @@ class LoginScreen extends StatelessWidget {
                   height: 60,
                   //TODO: Do Validation
                   child: TextField(
-                    autofocus: true,
                     textInputAction: TextInputAction.done,
                     controller: _phoneNoController,
                     keyboardType: TextInputType.phone,

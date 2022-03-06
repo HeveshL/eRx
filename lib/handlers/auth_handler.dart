@@ -1,6 +1,5 @@
 import 'package:erx/handlers/user_type_handler.dart';
 import 'package:erx/screens/login_screen.dart';
-import 'package:erx/utils/color_palette.dart';
 import 'package:erx/widgets/customer_loader.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -34,10 +33,6 @@ class AuthHandler extends StatelessWidget {
               }
             },
           );
-        }
-        // If stream is loading
-        else if (snapshot.connectionState != ConnectionState.done) {
-          return const CustomLoader();
         }
         // If user is not Logged in
         else {
