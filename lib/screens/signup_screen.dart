@@ -4,9 +4,11 @@ import 'package:erx/widgets/background_stripes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class PatientSignupScreen extends StatelessWidget {
-  PatientSignupScreen({Key? key}) : super(key: key);
+class SignupScreen extends StatelessWidget {
+  SignupScreen({Key? key}) : super(key: key);
 
   final TextEditingController _nameController = TextEditingController();
 
@@ -81,15 +83,27 @@ class PatientSignupScreen extends StatelessWidget {
                   onPressed: () {
                     final String _phoneNo =
                         FirebaseAuth.instance.currentUser!.phoneNumber!;
-                    FirebaseFirestore.instance
-                        .collection("patient")
-                        .doc(_phoneNo)
-                        .set(
-                      {
-                        "name": _nameController.text,
-                        "phoneNo": _phoneNo,
-                      },
-                    );
+                    final String? _userType = Provider.of<SharedPreferences>(
+                      context,
+                      listen: false,
+                    ).getString('userType');
+                    if (_userType == "patient" || _userType == "assistant") {
+                      FirebaseFirestore.instance
+                          .collection(_userType!)
+                          .doc(_phoneNo)
+                          .set(
+                        {
+                          "name": _nameController.text,
+                          "phoneNo": _phoneNo,
+                        },
+                      );
+                    }
+                    else if(_userType=="doctor"){
+
+                    }
+                    else if(_userType=="pharmacist"){
+
+                    }
                   },
                   child: Text(
                     "Next",
