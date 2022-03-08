@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:erx/screens/doctor_qualifications_screen.dart';
+import 'package:erx/screens/pharmacy_details_screen.dart';
 import 'package:erx/utils/color_palette.dart';
 import 'package:erx/widgets/background_stripes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -108,7 +109,17 @@ class SignupScreen extends StatelessWidget {
                           },
                         ),
                       );
-                    } else if (_userType == "pharmacist") {}
+                    } else if (_userType == "pharmacist") {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return PharmacyDetailsScreen(
+                              name: _nameController.text,
+                            );
+                          },
+                        ),
+                      );
+                    }
                   },
                   child: Text(
                     "Next",
