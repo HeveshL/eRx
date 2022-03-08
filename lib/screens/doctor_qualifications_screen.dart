@@ -1,17 +1,16 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:erx/screens/doctor_qualifications_screen.dart';
 import 'package:erx/utils/color_palette.dart';
 import 'package:erx/widgets/background_stripes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-class SignupScreen extends StatelessWidget {
-  SignupScreen({Key? key}) : super(key: key);
+class DoctorQualificationScreen extends StatelessWidget {
+  final String name;
+  DoctorQualificationScreen({Key? key, required this.name}) : super(key: key);
 
-  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _qualificationController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +34,7 @@ class SignupScreen extends StatelessWidget {
                   left: 20.0,
                 ),
                 child: Text(
-                  "Tell us your name",
+                  "Tell us your qualifications",
                   style: GoogleFonts.nunito(
                     fontSize: 25,
                     color: ColorPalette.honeyDew,
@@ -50,8 +49,8 @@ class SignupScreen extends StatelessWidget {
                   //TODO: Do Validation
                   child: TextField(
                     textInputAction: TextInputAction.done,
-                    controller: _nameController,
-                    keyboardType: TextInputType.name,
+                    controller: _qualificationController,
+                    keyboardType: TextInputType.text,
                     decoration: const InputDecoration(
                       enabledBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
@@ -84,31 +83,17 @@ class SignupScreen extends StatelessWidget {
                   onPressed: () {
                     final String _phoneNo =
                         FirebaseAuth.instance.currentUser!.phoneNumber!;
-                    final String? _userType = Provider.of<SharedPreferences>(
-                      context,
-                      listen: false,
-                    ).getString('userType');
-                    if (_userType == "patient" || _userType == "assistant") {
-                      FirebaseFirestore.instance
-                          .collection(_userType!)
-                          .doc(_phoneNo)
-                          .set(
-                        {
-                          "name": _nameController.text,
-                          "phoneNo": _phoneNo,
-                        },
-                      );
-                    } else if (_userType == "doctor") {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return DoctorQualificationScreen(
-                              name: _nameController.text,
-                            );
-                          },
-                        ),
-                      );
-                    } else if (_userType == "pharmacist") {}
+
+                    FirebaseFirestore.instance
+                        .collection("doctor")
+                        .doc(_phoneNo)
+                        .set(
+                      {
+                        "name": name,
+                        "qualifications": _qualificationController.text,
+                        "phoneNo": _phoneNo,
+                      },
+                    ).then((value) => Navigator.of(context).pop());
                   },
                   child: Text(
                     "Next",
