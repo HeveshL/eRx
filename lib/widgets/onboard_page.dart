@@ -9,11 +9,9 @@ class OnBoardPage extends StatelessWidget {
     Key? key,
     required this.data,
     this.onButtonClick,
-    required this.index,
   }) : super(key: key);
   final OnBoardPageModel data;
   final VoidCallback? onButtonClick;
-  final int index;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -42,28 +40,7 @@ class OnBoardPage extends StatelessWidget {
             ],
           ),
         ),
-        Expanded(
-          flex: 2,
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              for (int i = 0; i < 3; i++)
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                  child: Container(
-                    height: 10,
-                    width: 10,
-                    decoration: BoxDecoration(
-                      color: i == index
-                          ? ColorPalette.malachiteGreen
-                          : ColorPalette.honeyDew,
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                  ),
-                ),
-            ],
-          ),
-        ),
+       
       ],
     );
   }
