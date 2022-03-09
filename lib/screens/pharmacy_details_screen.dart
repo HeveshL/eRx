@@ -7,9 +7,11 @@ import 'package:google_fonts/google_fonts.dart';
 
 class PharmacyDetailsScreen extends StatelessWidget {
   final String name;
-  const PharmacyDetailsScreen({Key? key, required this.name}) : super(key: key);
-
-
+  PharmacyDetailsScreen({Key? key, required this.name}) : super(key: key);
+  final TextEditingController _pharmacyNameController = TextEditingController();
+  final TextEditingController _pharmacyAddressController =
+      TextEditingController();
+  final TextEditingController _pinCodeController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,44 +29,126 @@ class PharmacyDetailsScreen extends StatelessWidget {
               const Expanded(
                 child: SizedBox(),
               ),
-              // Padding(
-              //   padding: const EdgeInsets.only(
-              //     left: 20.0,
-              //   ),
-              //   child: Text(
-              //     "Tell us your qualifications",
-              //     style: GoogleFonts.nunito(
-              //       fontSize: 25,
-              //       color: ColorPalette.honeyDew,
-              //     ),
-              //   ),
-              // ),
-              // Padding(
-              //   padding: const EdgeInsets.all(20.0),
-              //   child: Container(
-              //     alignment: Alignment.center,
-              //     height: 60,
-              //     //TODO: Do Validation
-              //     child: TextField(
-              //       textInputAction: TextInputAction.done,
-              //       controller: _qualificationController,
-              //       keyboardType: TextInputType.text,
-              //       decoration: const InputDecoration(
-              //         enabledBorder: UnderlineInputBorder(
-              //           borderSide: BorderSide(
-              //             color: ColorPalette.honeyDew,
-              //             width: 2,
-              //           ),
-              //         ),
-              //       ),
-              //       style: GoogleFonts.nunito(
-              //         fontSize: 20,
-              //         color: ColorPalette.honeyDew,
-              //       ),
-              //       cursorColor: ColorPalette.honeyDew,
-              //     ),
-              //   ),
-              // ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: 20.0,
+                ),
+                child: Text(
+                  "Pharmacy Name",
+                  style: GoogleFonts.nunito(
+                    fontSize: 25,
+                    color: ColorPalette.honeyDew,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Container(
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    border: Border.all(
+                      color: ColorPalette.coolGrey,
+                      width: 2,
+                    ),
+                  ),
+                  height: 60,
+                  //TODO: Do Validation
+                  child: TextField(
+                    textInputAction: TextInputAction.done,
+                    controller: _pharmacyNameController,
+                    keyboardType: TextInputType.text,
+                    decoration: const InputDecoration(
+                      border: InputBorder.none,
+                    ),
+                    style: GoogleFonts.nunito(
+                      fontSize: 20,
+                      color: ColorPalette.honeyDew,
+                    ),
+                    cursorColor: ColorPalette.honeyDew,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: 20.0,
+                ),
+                child: Text(
+                  "Address",
+                  style: GoogleFonts.nunito(
+                    fontSize: 25,
+                    color: ColorPalette.honeyDew,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Container(
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    border: Border.all(
+                      color: ColorPalette.coolGrey,
+                      width: 2,
+                    ),
+                  ),
+                  height: 100,
+                  //TODO: Do Validation
+                  child: TextField(
+                    textInputAction: TextInputAction.done,
+                    controller: _pharmacyAddressController,
+                    keyboardType: TextInputType.text,
+                    decoration: const InputDecoration(
+                      border: InputBorder.none,
+                    ),
+                    style: GoogleFonts.nunito(
+                      fontSize: 20,
+                      color: ColorPalette.honeyDew,
+                    ),
+                    cursorColor: ColorPalette.honeyDew,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: 20.0,
+                ),
+                child: Text(
+                  "Pincode",
+                  style: GoogleFonts.nunito(
+                    fontSize: 25,
+                    color: ColorPalette.honeyDew,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Container(
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    border: Border.all(
+                      color: ColorPalette.coolGrey,
+                      width: 2,
+                    ),
+                  ),
+                  height: 60,
+                  //TODO: Do Validation
+                  child: TextField(
+                    textInputAction: TextInputAction.done,
+                    controller: _pinCodeController,
+                    keyboardType: TextInputType.text,
+                    decoration: const InputDecoration(
+                      border: InputBorder.none,
+                    ),
+                    style: GoogleFonts.nunito(
+                      fontSize: 20,
+                      color: ColorPalette.honeyDew,
+                    ),
+                    cursorColor: ColorPalette.honeyDew,
+                  ),
+                ),
+              ),
               const Expanded(
                 child: SizedBox(),
               ),
