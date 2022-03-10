@@ -44,6 +44,7 @@ class PharmacyDetailsScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Container(
+                  padding: const EdgeInsets.all(10),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(16),
@@ -84,7 +85,8 @@ class PharmacyDetailsScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Container(
-                  alignment: Alignment.center,
+                  padding: const EdgeInsets.all(10),
+                  // alignment: Alignment.center,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(16),
                     border: Border.all(
@@ -95,9 +97,9 @@ class PharmacyDetailsScreen extends StatelessWidget {
                   height: 100,
                   //TODO: Do Validation
                   child: TextField(
-                    textInputAction: TextInputAction.done,
+                    textInputAction: TextInputAction.newline,
                     controller: _pharmacyAddressController,
-                    keyboardType: TextInputType.text,
+                    keyboardType: TextInputType.multiline,
                     decoration: const InputDecoration(
                       border: InputBorder.none,
                     ),
@@ -124,6 +126,7 @@ class PharmacyDetailsScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Container(
+                  padding: const EdgeInsets.all(10),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(16),
@@ -137,7 +140,7 @@ class PharmacyDetailsScreen extends StatelessWidget {
                   child: TextField(
                     textInputAction: TextInputAction.done,
                     controller: _pinCodeController,
-                    keyboardType: TextInputType.text,
+                    keyboardType: TextInputType.number,
                     decoration: const InputDecoration(
                       border: InputBorder.none,
                     ),
@@ -163,18 +166,21 @@ class PharmacyDetailsScreen extends StatelessWidget {
                   ),
                   color: ColorPalette.malachiteGreen,
                   onPressed: () {
-                    // final String _phoneNo =
-                    //     FirebaseAuth.instance.currentUser!.phoneNumber!;
+                    final String _phoneNo =
+                        FirebaseAuth.instance.currentUser!.phoneNumber!;
 
-                    // FirebaseFirestore.instance
-                    //     .collection("doctor")
-                    //     .doc(_phoneNo)
-                    //     .set(
-                    //   {
-                    //     "name": name,
-                    //     "phoneNo": _phoneNo,
-                    //   },
-                    // ).then((value) => Navigator.of(context).pop());
+                    FirebaseFirestore.instance
+                        .collection("pharmacist")
+                        .doc(_phoneNo)
+                        .set(
+                      {
+                        "name": name,
+                        "phoneNo": _phoneNo,
+                        "pharmacyName": _pharmacyNameController.text,
+                        "address": _pharmacyAddressController.text,
+                        "pincode": _pinCodeController.text,
+                      },
+                    ).then((value) => Navigator.of(context).pop());
                   },
                   child: Text(
                     "Next",
