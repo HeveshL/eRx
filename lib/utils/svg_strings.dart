@@ -421,4 +421,50 @@ mixin SvgStrings {
   </g>
 </svg>
 ''';
+
+  static const String presCardBubbles = '''
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="388" height="128" viewBox="0 0 388 128">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_37" data-name="Rectangle 37" width="388" height="128" rx="16" transform="translate(20 334)" fill="#222831"/>
+    </clipPath>
+  </defs>
+  <g id="Card" transform="translate(-20 -334)">
+    <g id="Mask_Group_7" data-name="Mask Group 7" clip-path="url(#clip-path)">
+      <path id="Path_387" data-name="Path 387" d="M42.939,1.222C57.234,5.076,68,18.743,68,35c0,19.33-15.222,35-34,35a34.005,34.005,0,0,1-4.714-1.118V13.262A30.729,30.729,0,0,1,34,5.4C36.563,2.444,41.413.81,42.939,1.222Z" transform="translate(-9 334)" fill="#8795ab"/>
+      <path id="Path_386" data-name="Path 386" d="M259.682,173.354c20.69,1.859,38.394,12.77,55.835,24.055,18.506,11.974,40.716,22.307,47.982,43.118.292.837.864,2.78.864,2.78l-17.555,31.669s-3.044,4.577-7.455,5.915-10.189-.566-10.189-.566L182,199.782s8.609-9.326,14.055-13.1c18.252-12.662,41.506-15.312,63.631-13.324" transform="matrix(0.875, -0.485, 0.485, 0.875, -29.177, 375.541)" fill="#8795ab"/>
+    </g>
+  </g>
+</svg>
+''';
+
+  static const String hamburger = '''
+<svg xmlns="http://www.w3.org/2000/svg" width="27" height="21" viewBox="0 0 27 21">
+  <g id="Hamburger_Icon" data-name="Hamburger Icon" transform="translate(-33 -59)">
+    <line id="Line_41" data-name="Line 41" x2="24" transform="translate(34.5 69.5)" fill="none" stroke="#f8fffa" stroke-linecap="round" stroke-width="3"/>
+    <line id="Line_42" data-name="Line 42" x2="11" transform="translate(41.5 78.5)" fill="none" stroke="#f8fffa" stroke-linecap="round" stroke-width="3"/>
+    <line id="Line_43" data-name="Line 43" x2="11" transform="translate(41.5 60.5)" fill="none" stroke="#f8fffa" stroke-linecap="round" stroke-width="3"/>
+  </g>
+</svg>
+''';
+  static const String profile = '''
+<svg xmlns="http://www.w3.org/2000/svg" width="41.691" height="43.498" viewBox="0 0 41.691 43.498">
+  <g id="Profile" transform="translate(0.5)">
+    <g id="OBJECTS" transform="translate(0)">
+      <circle id="Ellipse_24" data-name="Ellipse 24" cx="20.345" cy="20.345" r="20.345" transform="translate(0 2.307)" fill="#f8fffa" stroke="#72fd9e" stroke-width="1"/>
+      <rect id="Rectangle_29" data-name="Rectangle 29" width="10.763" height="12.159" transform="translate(14.962 19.974)" fill="#e2988f"/>
+      <path id="Path_335" data-name="Path 335" d="M47.619,11.437a1.226,1.226,0,0,0-1.8-.729C46.514,4.261,43.23,0,37.078,0S27.641,4.261,28.33,10.716a1.239,1.239,0,0,0-1.822.729c-.612,1.429.488,4.738,1.159,5.81a7.49,7.49,0,0,0,1.859,1.855,8.624,8.624,0,0,0,.39,2.016,24.319,24.319,0,0,0,4.851,5.2,4.645,4.645,0,0,0,4.563,0,24.234,24.234,0,0,0,4.851-5.2,8.624,8.624,0,0,0,.39-2.016,7.49,7.49,0,0,0,1.859-1.855C47.13,16.187,48.213,12.859,47.619,11.437Z" transform="translate(-16.732)" fill="#e2988f"/>
+      <path id="Path_336" data-name="Path 336" d="M46.346,67.642a4.83,4.83,0,0,1-2.406-.612,20.8,20.8,0,0,1-3.131-2.978l.2-.182a19.961,19.961,0,0,0,3.065,2.916,4.5,4.5,0,0,0,4.421,0,20.742,20.742,0,0,0,3.076-2.916l.2.182a20.3,20.3,0,0,1-3.135,2.981A4.257,4.257,0,0,1,46.346,67.642Z" transform="translate(-25.935 -40.59)" fill="#c46966"/>
+      <rect id="Rectangle_30" data-name="Rectangle 30" width="0.273" height="2.788" transform="translate(12.346 16.351) rotate(-7.03)" fill="#c46966"/>
+      <rect id="Rectangle_31" data-name="Rectangle 31" width="2.785" height="0.273" transform="matrix(0.111, -0.994, 0.994, 0.111, 27.744, 19.089)" fill="#c46966"/>
+      <path id="Path_337" data-name="Path 337" d="M28.682,35.491c-.058-.211-.539-2.059.128-2.551a.587.587,0,0,1,.514-.091,1.01,1.01,0,0,1,.528.576l-.255.1c-.036-.095-.175-.364-.364-.416a.313.313,0,0,0-.273.055c-.383.292-.219,1.549-.022,2.271Z" transform="translate(-18.087 -20.861)" fill="#c46966"/>
+      <path id="Path_338" data-name="Path 338" d="M80.517,35.465l-.266-.073c.2-.729.364-1.979-.026-2.274a.292.292,0,0,0-.266-.051c-.219.073-.364.412-.364.416l-.255-.1a1.01,1.01,0,0,1,.528-.576.587.587,0,0,1,.507.084C81.057,33.405,80.572,35.253,80.517,35.465Z" transform="translate(-50.422 -20.834)" fill="#c46966"/>
+      <path id="Path_339" data-name="Path 339" d="M32.548,14.109c1.822,0,.445-5.883,1.877-7.312a2.7,2.7,0,0,1,2.7-.364,15.141,15.141,0,0,0,3.28.663,13.2,13.2,0,0,0,3.448-.678,2.584,2.584,0,0,1,2.551.386c1.432,1.429.051,7.322,1.877,7.312-.153-1.36-.153-2.861.86-3.4h0C49.847,4.261,46.563,0,40.41,0s-9.436,4.261-8.748,10.716h0C32.49,11.244,32.676,12.684,32.548,14.109Z" transform="translate(-20.065)" fill="#111418"/>
+      <path id="Path_340" data-name="Path 340" d="M42.889,85.09a52.528,52.528,0,0,0-12.006-3.47c-2.876,3-8.234,3.054-10.767,0A51.889,51.889,0,0,0,8.11,85.09a20.349,20.349,0,0,0,34.779,0Z" transform="translate(-5.154 -51.871)" fill="#72fd9e"/>
+      <path id="Path_341" data-name="Path 341" d="M37.06,77.64l1.454-2.61,4.709,4.228-2.879,3.156Z" transform="translate(-23.552 -47.683)" fill="#fff"/>
+      <path id="Path_342" data-name="Path 342" d="M63.813,77.64l-1.454-2.61L57.65,79.258l2.883,3.156Z" transform="translate(-36.638 -47.683)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
+''';
 }

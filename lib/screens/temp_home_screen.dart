@@ -1,5 +1,6 @@
 import 'package:erx/utils/color_palette.dart';
 import 'package:erx/utils/svg_strings.dart';
+import 'package:erx/widgets/prescription_card.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -16,23 +17,34 @@ class TempHomeScreen extends StatelessWidget {
       backgroundColor: ColorPalette.charlestonGreen,
       body: Stack(
         children: [
-          Expanded(
-            child: SvgPicture.string(SvgStrings.homeScreenBackground),
+          SvgPicture.string(
+            SvgStrings.homeScreenBackground,
+            width: MediaQuery.of(context).size.width,
           ),
           SafeArea(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // Top Extra padding
+                const SizedBox(
+                  height: 20,
+                ),
+                // Top logo/menu/profile
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
-                        height: 30,
-                        width: 30,
-                        color: Colors.blue,
+                      // menu
+                      Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: SizedBox(
+                          height: 25,
+                          width: 25,
+                          child: SvgPicture.string(SvgStrings.hamburger),
+                        ),
                       ),
+                      // logo
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -46,34 +58,33 @@ class TempHomeScreen extends StatelessWidget {
                                 angle: 8 * 22 / 7 / 180,
                                 child: SvgPicture.string(
                                   SvgStrings.logoE,
-                                  height: 20,
+                                  height: 18,
                                 ),
                               ),
                             ],
                           ),
-                          Material(
-                            color: Colors.transparent,
-                            child: Text(
-                              "prescription",
-                              style: GoogleFonts.nunito(
-                                color: ColorPalette.honeyDew,
-                                fontSize: 23,
-                                fontWeight: FontWeight.w800,
-                              ),
+                          Text(
+                            "prescription",
+                            style: GoogleFonts.nunito(
+                              color: ColorPalette.honeyDew,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w800,
                             ),
                           ),
                         ],
                       ),
-                      Container(
-                        height: 30,
-                        width: 30,
-                        color: Colors.blue,
+                      // Profile
+                      SizedBox(
+                        height: 35,
+                        width: 35,
+                        child: SvgPicture.string(SvgStrings.profile),
                       ),
                     ],
                   ),
                 ),
+                // Greatings
                 Padding(
-                  padding: const EdgeInsets.only(top: 30, left: 20),
+                  padding: const EdgeInsets.only(top: 30, left: 25),
                   child: Text(
                     "Hello John!",
                     style: GoogleFonts.nunito(
@@ -84,7 +95,7 @@ class TempHomeScreen extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 5, left: 20),
+                  padding: const EdgeInsets.only(top: 5, left: 25),
                   child: Text(
                     "Hope you have a great day!",
                     style: GoogleFonts.nunito(
@@ -96,11 +107,13 @@ class TempHomeScreen extends StatelessWidget {
                 const SizedBox(
                   height: 30,
                 ),
+                // Body
                 Expanded(
                   child: Stack(
                     children: [
+                      // Main content
                       Padding(
-                        padding: const EdgeInsets.only(top: 17.0),
+                        padding: const EdgeInsets.only(top: 25.0),
                         child: Container(
                           height: double.infinity,
                           width: double.infinity,
@@ -111,19 +124,71 @@ class TempHomeScreen extends StatelessWidget {
                             ),
                             color: ColorPalette.chineseBlack,
                           ),
+                          child: SingleChildScrollView(
+                            child: Column(
+                              children: const [
+                                SizedBox(
+                                  height: 50,
+                                ),
+                                PrescriptionCard(
+                                  doctorName: "Dr. Sakhir Ahmed",
+                                  hospitalName: "Orange City Hospital",
+                                  prescriptionDate: "10-03-2022",
+                                  followUpDate: "20-03-2022",
+                                  patientName: "Mr. John Smith",
+                                ),
+                                PrescriptionCard(
+                                  doctorName: "Dr. Sakhir Ahmed",
+                                  hospitalName: "Orange City Hospital",
+                                  prescriptionDate: "10-03-2022",
+                                  followUpDate: "20-03-2022",
+                                  patientName: "Mr. John Smith",
+                                ),
+                                PrescriptionCard(
+                                  doctorName: "Dr. Sakhir Ahmed",
+                                  hospitalName: "Orange City Hospital",
+                                  prescriptionDate: "10-03-2022",
+                                  followUpDate: "20-03-2022",
+                                  patientName: "Mr. John Smith",
+                                ),
+                                PrescriptionCard(
+                                  doctorName: "Dr. Sakhir Ahmed",
+                                  hospitalName: "Orange City Hospital",
+                                  prescriptionDate: "10-03-2022",
+                                  followUpDate: "20-03-2022",
+                                  patientName: "Mr. John Smith",
+                                ),
+                                PrescriptionCard(
+                                  doctorName: "Dr. Sakhir Ahmed",
+                                  hospitalName: "Orange City Hospital",
+                                  prescriptionDate: "10-03-2022",
+                                  followUpDate: "20-03-2022",
+                                  patientName: "Mr. John Smith",
+                                ),
+                                PrescriptionCard(
+                                  doctorName: "Dr. Sakhir Ahmed",
+                                  hospitalName: "Orange City Hospital",
+                                  prescriptionDate: "10-03-2022",
+                                  followUpDate: "20-03-2022",
+                                  patientName: "Mr. John Smith",
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
                       ),
+                      // Search  box
                       Padding(
                         padding: const EdgeInsets.only(
                           left: 40,
                           right: 40,
                         ),
                         child: Container(
-                          height: 40,
+                          height: 60,
                           width: double.infinity,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(16),
-                            color: Colors.grey,
+                            color: ColorPalette.charlestonGreen,
                           ),
                         ),
                       ),
@@ -133,19 +198,19 @@ class TempHomeScreen extends StatelessWidget {
               ],
             ),
           ),
-          Center(
-            child: IconButton(
-              icon: const Icon(Icons.power_settings_new_outlined),
-              color: Colors.white,
-              onPressed: () {
-                Provider.of<SharedPreferences>(
-                  context,
-                  listen: false,
-                ).remove("userType");
-                FirebaseAuth.instance.signOut();
-              },
-            ),
-          ),
+          // Center(
+          //   child: IconButton(
+          //     icon: const Icon(Icons.power_settings_new_outlined),
+          //     color: Colors.white,
+          //     onPressed: () {
+          //       Provider.of<SharedPreferences>(
+          //         context,
+          //         listen: false,
+          //       ).remove("userType");
+          //       FirebaseAuth.instance.signOut();
+          //     },
+          //   ),
+          // ),
         ],
       ),
     );
