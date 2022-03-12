@@ -1,5 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:erx/utils/color_palette.dart';
 import 'package:erx/utils/svg_strings.dart';
+import 'package:erx/utils/toast.dart';
 import 'package:erx/widgets/prescription_card.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +11,12 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class TempHomeScreen extends StatelessWidget {
-  const TempHomeScreen({Key? key}) : super(key: key);
+  TempHomeScreen({Key? key}) : super(key: key);
+
+  final _nameStream = FirebaseFirestore.instance
+      .collection("patient")
+      .doc(FirebaseAuth.instance.currentUser!.phoneNumber)
+      .snapshots();
 
   @override
   Widget build(BuildContext context) {
@@ -74,25 +81,55 @@ class TempHomeScreen extends StatelessWidget {
                         ],
                       ),
                       // Profile
-                      SizedBox(
-                        height: 35,
-                        width: 35,
-                        child: SvgPicture.string(SvgStrings.profile),
+                      GestureDetector(
+                        onTap: () {
+                          Provider.of<SharedPreferences>(
+                            context,
+                            listen: false,
+                          ).remove("userType");
+                          FirebaseAuth.instance.signOut().then((value) {
+                            showTextToast("Logout Success!");
+                          });
+                        },
+                        child: SizedBox(
+                          height: 35,
+                          width: 35,
+                          child: SvgPicture.string(SvgStrings.profile),
+                        ),
                       ),
                     ],
                   ),
                 ),
                 // Greatings
-                Padding(
-                  padding: const EdgeInsets.only(top: 30, left: 25),
-                  child: Text(
-                    "Hello John!",
-                    style: GoogleFonts.nunito(
-                      color: ColorPalette.honeyDew,
-                      fontSize: 23,
-                      fontWeight: FontWeight.w800,
-                    ),
-                  ),
+                StreamBuilder<DocumentSnapshot<Map<String, dynamic>>>(
+                  stream: _nameStream,
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      return Padding(
+                        padding: const EdgeInsets.only(top: 30, left: 25),
+                        child: Text(
+                          "Hello ${snapshot.data!.data()!['name']}!",
+                          style: GoogleFonts.nunito(
+                            color: ColorPalette.honeyDew,
+                            fontSize: 23,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                      );
+                    } else {
+                      return Padding(
+                        padding: const EdgeInsets.only(top: 30, left: 25),
+                        child: Text(
+                          "Hello !",
+                          style: GoogleFonts.nunito(
+                            color: ColorPalette.honeyDew,
+                            fontSize: 23,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                      );
+                    }
+                  },
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 5, left: 25),
@@ -198,19 +235,6 @@ class TempHomeScreen extends StatelessWidget {
               ],
             ),
           ),
-          // Center(
-          //   child: IconButton(
-          //     icon: const Icon(Icons.power_settings_new_outlined),
-          //     color: Colors.white,
-          //     onPressed: () {
-          //       Provider.of<SharedPreferences>(
-          //         context,
-          //         listen: false,
-          //       ).remove("userType");
-          //       FirebaseAuth.instance.signOut();
-          //     },
-          //   ),
-          // ),
         ],
       ),
     );

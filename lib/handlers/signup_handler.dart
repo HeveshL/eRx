@@ -30,7 +30,7 @@ class SignUpHandler extends StatelessWidget {
           } else {
             // Signed up
             // Todo: Check user type and route corresponding home screen
-            return const TempHomeScreen();
+            return TempHomeScreen();
           }
         } else {
           // Loading
