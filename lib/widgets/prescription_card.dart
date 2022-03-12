@@ -3,8 +3,9 @@ import 'package:erx/utils/color_palette.dart';
 import 'package:erx/utils/svg_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-const double _borderRadius = 20;
+const double _borderRadius = 16;
 
 class PrescriptionCard extends StatelessWidget {
   const PrescriptionCard({
@@ -52,7 +53,91 @@ class PrescriptionCard extends StatelessWidget {
                 ),
               ),
               Container(
-                color: Color.fromARGB(255, 15, 18, 24).withOpacity(0.6),
+                color: const Color.fromARGB(255, 15, 18, 24).withOpacity(0.6),
+              ),
+              // Content
+              Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        // Hospital name
+                        Text(
+                          hospitalName,
+                          style: GoogleFonts.nunito(
+                            color: ColorPalette.honeyDew,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        // Prescription Date
+                        Row(
+                          children: [
+                            SvgPicture.string(SvgStrings.calendar),
+                            const SizedBox(
+                              width: 5,
+                            ),
+                            Text(
+                              prescriptionDate,
+                              style: GoogleFonts.nunito(
+                                color: ColorPalette.honeyDew,
+                                fontSize: 12,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    // Doctor's name
+                    Text(
+                      doctorName,
+                      style: GoogleFonts.nunito(
+                        color: ColorPalette.honeyDew,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    const Expanded(child: SizedBox()),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        // patient name
+                        Text(
+                          patientName,
+                          style: GoogleFonts.nunito(
+                            color: ColorPalette.honeyDew,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        // Followup Date
+                        Row(
+                          children: [
+                            SvgPicture.string(SvgStrings.followUp),
+                            const SizedBox(
+                              width: 5,
+                            ),
+                            Text(
+                              followUpDate ?? '',
+                              style: GoogleFonts.nunito(
+                                color: ColorPalette.malachiteGreen,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
