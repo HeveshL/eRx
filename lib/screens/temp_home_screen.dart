@@ -17,6 +17,7 @@ class TempHomeScreen extends StatelessWidget {
       .collection("patient")
       .doc(FirebaseAuth.instance.currentUser!.phoneNumber)
       .snapshots();
+  final _searchController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -221,11 +222,51 @@ class TempHomeScreen extends StatelessWidget {
                           right: 40,
                         ),
                         child: Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 24,
+                          ),
                           height: 60,
                           width: double.infinity,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(16),
                             color: ColorPalette.charlestonGreen,
+                            boxShadow: [
+                              BoxShadow(
+                                color: ColorPalette.coolGrey.withOpacity(0.3),
+                                blurRadius: 20,
+                                offset: const Offset(0, 5),
+                              ),
+                            ],
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SvgPicture.string(SvgStrings.search),
+                              const SizedBox(
+                                width: 15,
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  textInputAction: TextInputAction.done,
+                                  controller: _searchController,
+                                  keyboardType: TextInputType.text,
+                                  decoration: InputDecoration(
+                                    enabledBorder: InputBorder.none,
+                                    border: InputBorder.none,
+                                    hintText: "Search your prescription",
+                                    hintStyle: GoogleFonts.nunito(
+                                      fontSize: 16,
+                                      color: ColorPalette.coolGrey,
+                                    ),
+                                  ),
+                                  style: GoogleFonts.nunito(
+                                    fontSize: 16,
+                                    color: ColorPalette.honeyDew,
+                                  ),
+                                  cursorColor: ColorPalette.honeyDew,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),

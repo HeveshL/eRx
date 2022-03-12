@@ -479,4 +479,16 @@ mixin SvgStrings {
   <path id="Icon_awesome-user-clock" data-name="Icon awesome-user-clock" d="M13.563,6.125A3.938,3.938,0,1,0,17.5,10.063,3.935,3.935,0,0,0,13.563,6.125Zm1.75,4.11a.267.267,0,0,1-.265.265H13.39a.267.267,0,0,1-.265-.265V8.14a.267.267,0,0,1,.265-.265h.345A.267.267,0,0,1,14,8.14V9.625h1.047a.267.267,0,0,1,.265.265ZM8.75,10.063a4.8,4.8,0,0,1,.5-2.119,3.643,3.643,0,0,0-.673-.068H8.118a4.76,4.76,0,0,1-3.987,0H3.675A3.676,3.676,0,0,0,0,11.55v1.137A1.313,1.313,0,0,0,1.312,14H10.8A4.812,4.812,0,0,1,8.75,10.063ZM6.125,7a3.5,3.5,0,1,0-3.5-3.5A3.5,3.5,0,0,0,6.125,7Z" fill="#72fd9e"/>
 </svg>
 ''';
+
+  static const String search = '''
+<svg xmlns="http://www.w3.org/2000/svg" width="21.414" height="22.557" viewBox="0 0 21.414 22.557">
+  <g id="Search_Icon" data-name="Search Icon" transform="translate(-64 -256)">
+    <g id="Ellipse_25" data-name="Ellipse 25" transform="translate(64 256)" fill="none" stroke="#8795ab" stroke-width="2">
+      <ellipse cx="9.25" cy="9.321" rx="9.25" ry="9.321" stroke="none"/>
+      <ellipse cx="9.25" cy="9.321" rx="8.25" ry="8.321" fill="none"/>
+    </g>
+    <line id="Line_44" data-name="Line 44" x2="3" y2="3" transform="translate(81 274.143)" fill="none" stroke="#8795ab" stroke-linecap="round" stroke-width="2"/>
+  </g>
+</svg>
+''';
 }
