@@ -28,10 +28,10 @@ class _UserTypeScreenState extends State<UserTypeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: ColorPalette.charlestonGreen,
+      backgroundColor: ColorPalette.chineseBlack,
       body: Stack(
         children: [
-          const BackgroundStripes(),
+          // const BackgroundStripes(),
           Center(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

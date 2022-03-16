@@ -29,10 +29,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorPalette.charlestonGreen,
+      backgroundColor: ColorPalette.chineseBlack,
       body: Stack(
         children: [
-          const BackgroundStripes(),
+          // const BackgroundStripes(),
           PageView(
             onPageChanged: (value) {
               setState(() {

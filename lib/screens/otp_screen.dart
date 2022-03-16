@@ -59,10 +59,10 @@ class _OtpScreenState extends State<OtpScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: ColorPalette.charlestonGreen,
+      backgroundColor: ColorPalette.chineseBlack,
       body: Stack(
         children: [
-          const BackgroundStripes(),
+          // const BackgroundStripes(),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
