@@ -1,6 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:erx/screens/assistant_home_screen.dart';
+import 'package:erx/screens/doctor_home_screen.dart';
+import 'package:erx/screens/error_screen.dart';
+import 'package:erx/screens/patient_home_screen.dart';
+import 'package:erx/screens/pharmacist_home_screen.dart';
 import 'package:erx/screens/signup_screen.dart';
-import 'package:erx/screens/temp_home_screen.dart';
 import 'package:erx/widgets/customer_loader.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +34,17 @@ class SignUpHandler extends StatelessWidget {
           } else {
             // Signed up
             // Todo: Check user type and route corresponding home screen
-            return TempHomeScreen();
+            if (_userType == "patient") {
+              return PatientHomeScreen();
+            } else if (_userType == "doctor") {
+              return const DoctorHomeScreen();
+            } else if (_userType == "assistant") {
+              return const AssistantHomeScreen();
+            } else if (_userType == "pharmacist") {
+              return const PharmacistHomeScreen();
+            } else {
+              return const ErrorScreen();
+            }
           }
         } else {
           // Loading

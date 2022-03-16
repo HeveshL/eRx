@@ -10,17 +10,17 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class TempHomeScreen extends StatelessWidget {
-  TempHomeScreen({Key? key}) : super(key: key);
-
-  final _nameStream = FirebaseFirestore.instance
-      .collection("patient")
-      .doc(FirebaseAuth.instance.currentUser!.phoneNumber)
-      .snapshots();
-  final _searchController = TextEditingController();
+class DoctorHomeScreen extends StatelessWidget {
+  const DoctorHomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final _nameStream = FirebaseFirestore.instance
+        .collection("doctor")
+        .doc(FirebaseAuth.instance.currentUser!.phoneNumber)
+        .snapshots();
+    final _searchController = TextEditingController();
+
     return Scaffold(
       backgroundColor: ColorPalette.charlestonGreen,
       body: Stack(
@@ -109,7 +109,7 @@ class TempHomeScreen extends StatelessWidget {
                       return Padding(
                         padding: const EdgeInsets.only(top: 30, left: 25),
                         child: Text(
-                          "Hello ${snapshot.data!.data()!['name']}!",
+                          "Hello Dr. ${(snapshot.data!.data()!['name'] as String).split(" ")[0]}!",
                           style: GoogleFonts.nunito(
                             color: ColorPalette.honeyDew,
                             fontSize: 23,
@@ -169,42 +169,36 @@ class TempHomeScreen extends StatelessWidget {
                                   height: 50,
                                 ),
                                 PrescriptionCard(
-                                  doctorName: "Dr. Sakhir Ahmed",
                                   hospitalName: "Orange City Hospital",
                                   prescriptionDate: "10-03-2022",
                                   followUpDate: "20-03-2022",
                                   patientName: "Mr. John Smith",
                                 ),
                                 PrescriptionCard(
-                                  doctorName: "Dr. Sakhir Ahmed",
                                   hospitalName: "Orange City Hospital",
                                   prescriptionDate: "10-03-2022",
                                   followUpDate: "20-03-2022",
                                   patientName: "Mr. John Smith",
                                 ),
                                 PrescriptionCard(
-                                  doctorName: "Dr. Sakhir Ahmed",
                                   hospitalName: "Orange City Hospital",
                                   prescriptionDate: "10-03-2022",
                                   followUpDate: "20-03-2022",
                                   patientName: "Mr. John Smith",
                                 ),
                                 PrescriptionCard(
-                                  doctorName: "Dr. Sakhir Ahmed",
                                   hospitalName: "Orange City Hospital",
                                   prescriptionDate: "10-03-2022",
                                   followUpDate: "20-03-2022",
                                   patientName: "Mr. John Smith",
                                 ),
                                 PrescriptionCard(
-                                  doctorName: "Dr. Sakhir Ahmed",
                                   hospitalName: "Orange City Hospital",
                                   prescriptionDate: "10-03-2022",
                                   followUpDate: "20-03-2022",
                                   patientName: "Mr. John Smith",
                                 ),
                                 PrescriptionCard(
-                                  doctorName: "Dr. Sakhir Ahmed",
                                   hospitalName: "Orange City Hospital",
                                   prescriptionDate: "10-03-2022",
                                   followUpDate: "20-03-2022",

@@ -11,13 +11,13 @@ class PrescriptionCard extends StatelessWidget {
   const PrescriptionCard({
     Key? key,
     required this.hospitalName,
-    required this.doctorName,
+    this.doctorName,
     required this.patientName,
     required this.prescriptionDate,
     this.followUpDate,
   }) : super(key: key);
   final String hospitalName;
-  final String doctorName;
+  final String? doctorName;
   final String patientName;
   final String prescriptionDate;
   final String? followUpDate;
@@ -97,7 +97,7 @@ class PrescriptionCard extends StatelessWidget {
                     ),
                     // Doctor's name
                     Text(
-                      doctorName,
+                      doctorName ?? '',
                       style: GoogleFonts.nunito(
                         color: ColorPalette.honeyDew,
                         fontSize: 14,
