@@ -152,59 +152,65 @@ class DoctorHomeScreen extends StatelessWidget {
                       // Main content
                       Padding(
                         padding: const EdgeInsets.only(top: 25.0),
-                        child: Container(
-                          height: double.infinity,
-                          width: double.infinity,
-                          decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(34),
-                              topRight: Radius.circular(34),
-                            ),
-                            color: ColorPalette.chineseBlack,
+                        child: ClipRRect(
+                          borderRadius: const BorderRadius.only(
+                            topLeft: Radius.circular(34),
+                            topRight: Radius.circular(34),
                           ),
-                          child: SingleChildScrollView(
-                            child: Column(
-                              children: const [
-                                SizedBox(
-                                  height: 50,
-                                ),
-                                PrescriptionCard(
-                                  hospitalName: "Orange City Hospital",
-                                  prescriptionDate: "10-03-2022",
-                                  followUpDate: "20-03-2022",
-                                  patientName: "Mr. John Smith",
-                                ),
-                                PrescriptionCard(
-                                  hospitalName: "Orange City Hospital",
-                                  prescriptionDate: "10-03-2022",
-                                  followUpDate: "20-03-2022",
-                                  patientName: "Mr. John Smith",
-                                ),
-                                PrescriptionCard(
-                                  hospitalName: "Orange City Hospital",
-                                  prescriptionDate: "10-03-2022",
-                                  followUpDate: "20-03-2022",
-                                  patientName: "Mr. John Smith",
-                                ),
-                                PrescriptionCard(
-                                  hospitalName: "Orange City Hospital",
-                                  prescriptionDate: "10-03-2022",
-                                  followUpDate: "20-03-2022",
-                                  patientName: "Mr. John Smith",
-                                ),
-                                PrescriptionCard(
-                                  hospitalName: "Orange City Hospital",
-                                  prescriptionDate: "10-03-2022",
-                                  followUpDate: "20-03-2022",
-                                  patientName: "Mr. John Smith",
-                                ),
-                                PrescriptionCard(
-                                  hospitalName: "Orange City Hospital",
-                                  prescriptionDate: "10-03-2022",
-                                  followUpDate: "20-03-2022",
-                                  patientName: "Mr. John Smith",
-                                ),
-                              ],
+                          child: Container(
+                            height: double.infinity,
+                            width: double.infinity,
+                            decoration: const BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(34),
+                                topRight: Radius.circular(34),
+                              ),
+                              color: ColorPalette.chineseBlack,
+                            ),
+                            child: SingleChildScrollView(
+                              child: Column(
+                                children: const [
+                                  SizedBox(
+                                    height: 50,
+                                  ),
+                                  PrescriptionCard(
+                                    hospitalName: "Orange City Hospital",
+                                    prescriptionDate: "10-03-2022",
+                                    followUpDate: "20-03-2022",
+                                    patientName: "Mr. John Smith",
+                                  ),
+                                  PrescriptionCard(
+                                    hospitalName: "Orange City Hospital",
+                                    prescriptionDate: "10-03-2022",
+                                    followUpDate: "20-03-2022",
+                                    patientName: "Mr. John Smith",
+                                  ),
+                                  PrescriptionCard(
+                                    hospitalName: "Orange City Hospital",
+                                    prescriptionDate: "10-03-2022",
+                                    followUpDate: "20-03-2022",
+                                    patientName: "Mr. John Smith",
+                                  ),
+                                  PrescriptionCard(
+                                    hospitalName: "Orange City Hospital",
+                                    prescriptionDate: "10-03-2022",
+                                    followUpDate: "20-03-2022",
+                                    patientName: "Mr. John Smith",
+                                  ),
+                                  PrescriptionCard(
+                                    hospitalName: "Orange City Hospital",
+                                    prescriptionDate: "10-03-2022",
+                                    followUpDate: "20-03-2022",
+                                    patientName: "Mr. John Smith",
+                                  ),
+                                  PrescriptionCard(
+                                    hospitalName: "Orange City Hospital",
+                                    prescriptionDate: "10-03-2022",
+                                    followUpDate: "20-03-2022",
+                                    patientName: "Mr. John Smith",
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
