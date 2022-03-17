@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:erx/screens/new_prescription_screen.dart';
 import 'package:erx/utils/color_palette.dart';
 import 'package:erx/utils/svg_strings.dart';
 import 'package:erx/utils/toast.dart';
@@ -7,6 +8,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -19,7 +21,16 @@ class DoctorHomeScreen extends StatelessWidget {
         .collection("doctor")
         .doc(FirebaseAuth.instance.currentUser!.phoneNumber)
         .snapshots();
+    final _prescriptionStream = FirebaseFirestore.instance
+        .collection("prescription")
+        .where(
+          "doctorID",
+          isEqualTo: FirebaseAuth.instance.currentUser!.phoneNumber,
+        )
+        .snapshots();
     final _searchController = TextEditingController();
+
+    final f = DateFormat('yyyy-MM-dd');
 
     return Scaffold(
       backgroundColor: ColorPalette.charlestonGreen,
@@ -167,50 +178,98 @@ class DoctorHomeScreen extends StatelessWidget {
                               ),
                               color: ColorPalette.chineseBlack,
                             ),
-                            child: SingleChildScrollView(
-                              child: Column(
-                                children: const [
-                                  SizedBox(
-                                    height: 50,
-                                  ),
-                                  PrescriptionCard(
-                                    hospitalName: "Orange City Hospital",
-                                    prescriptionDate: "10-03-2022",
-                                    followUpDate: "20-03-2022",
-                                    patientName: "Mr. John Smith",
-                                  ),
-                                  PrescriptionCard(
-                                    hospitalName: "Orange City Hospital",
-                                    prescriptionDate: "10-03-2022",
-                                    followUpDate: "20-03-2022",
-                                    patientName: "Mr. John Smith",
-                                  ),
-                                  PrescriptionCard(
-                                    hospitalName: "Orange City Hospital",
-                                    prescriptionDate: "10-03-2022",
-                                    followUpDate: "20-03-2022",
-                                    patientName: "Mr. John Smith",
-                                  ),
-                                  PrescriptionCard(
-                                    hospitalName: "Orange City Hospital",
-                                    prescriptionDate: "10-03-2022",
-                                    followUpDate: "20-03-2022",
-                                    patientName: "Mr. John Smith",
-                                  ),
-                                  PrescriptionCard(
-                                    hospitalName: "Orange City Hospital",
-                                    prescriptionDate: "10-03-2022",
-                                    followUpDate: "20-03-2022",
-                                    patientName: "Mr. John Smith",
-                                  ),
-                                  PrescriptionCard(
-                                    hospitalName: "Orange City Hospital",
-                                    prescriptionDate: "10-03-2022",
-                                    followUpDate: "20-03-2022",
-                                    patientName: "Mr. John Smith",
-                                  ),
-                                ],
-                              ),
+                            child: Column(
+                              children: [
+                                SizedBox(
+                                  height: 50,
+                                ),
+                                // PrescriptionCard(
+                                //   hospitalName: "Orange City Hospital",
+                                //   prescriptionDate: "10-03-2022",
+                                //   followUpDate: "20-03-2022",
+                                //   patientName: "Mr. John Smith",
+                                // ),
+                                // PrescriptionCard(
+                                //   hospitalName: "Orange City Hospital",
+                                //   prescriptionDate: "10-03-2022",
+                                //   followUpDate: "20-03-2022",
+                                //   patientName: "Mr. John Smith",
+                                // ),
+                                // PrescriptionCard(
+                                //   hospitalName: "Orange City Hospital",
+                                //   prescriptionDate: "10-03-2022",
+                                //   followUpDate: "20-03-2022",
+                                //   patientName: "Mr. John Smith",
+                                // ),
+                                // PrescriptionCard(
+                                //   hospitalName: "Orange City Hospital",
+                                //   prescriptionDate: "10-03-2022",
+                                //   followUpDate: "20-03-2022",
+                                //   patientName: "Mr. John Smith",
+                                // ),
+                                // PrescriptionCard(
+                                //   hospitalName: "Orange City Hospital",
+                                //   prescriptionDate: "10-03-2022",
+                                //   followUpDate: "20-03-2022",
+                                //   patientName: "Mr. John Smith",
+                                // ),
+                                // PrescriptionCard(
+                                //   hospitalName: "Orange City Hospital",
+                                //   prescriptionDate: "10-03-2022",
+                                //   followUpDate: "20-03-2022",
+                                //   patientName: "Mr. John Smith",
+                                // ),
+                                StreamBuilder<
+                                        QuerySnapshot<Map<String, dynamic>>>(
+                                    stream: _prescriptionStream,
+                                    builder: (
+                                      context,
+                                      AsyncSnapshot<
+                                              QuerySnapshot<
+                                                  Map<String, dynamic>>>
+                                          snapshot,
+                                    ) {
+                                      if (snapshot.hasData) {
+                                        return Expanded(
+                                          child: ListView.builder(
+                                            itemCount:
+                                                snapshot.data!.docs.length,
+                                            itemBuilder: (context, index) {
+                                              return PrescriptionCard(
+                                                hospitalName: snapshot
+                                                        .data!.docs[index]
+                                                        .data()['hospital']
+                                                    as String,
+                                                prescriptionDate: f.format(
+                                                  (snapshot.data!.docs[index]
+                                                                  .data()[
+                                                              'dateTime']
+                                                          as Timestamp)
+                                                      .toDate(),
+                                                ),
+                                                followUpDate: snapshot
+                                                        .data!.docs[index]
+                                                        .data()['followUp']
+                                                    as String?,
+                                                patientName: (snapshot
+                                                            .data!.docs[index]
+                                                            .data()['patient']
+                                                        as Map<String,
+                                                            dynamic>)['name']
+                                                    as String,
+                                              );
+                                            },
+                                          ),
+                                        );
+                                      } else {
+                                        return Expanded(
+                                          child: Center(
+                                            child: CircularProgressIndicator(),
+                                          ),
+                                        );
+                                      }
+                                    }),
+                              ],
                             ),
                           ),
                         ),
@@ -270,6 +329,24 @@ class DoctorHomeScreen extends StatelessWidget {
                           ),
                         ),
                       ),
+                      Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Padding(
+                          padding: const EdgeInsets.only(bottom: 15),
+                          child: FloatingActionButton(
+                            onPressed: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return const NewPrescriptionScreen();
+                                  },
+                                ),
+                              );
+                            },
+                            child: const Icon(Icons.add),
+                          ),
+                        ),
+                      )
                     ],
                   ),
                 ),
