@@ -7,6 +7,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -17,6 +18,15 @@ class PatientHomeScreen extends StatelessWidget {
       .collection("patient")
       .doc(FirebaseAuth.instance.currentUser!.phoneNumber)
       .snapshots();
+  final _prescriptionStream = FirebaseFirestore.instance
+      .collection("prescription")
+      .where(
+        "patientPhone",
+        isEqualTo: FirebaseAuth.instance.currentUser!.phoneNumber,
+      )
+      .snapshots();
+
+  final f = DateFormat('yyyy-MM-dd');
   final _searchController = TextEditingController();
 
   @override
@@ -167,56 +177,102 @@ class PatientHomeScreen extends StatelessWidget {
                               ),
                               color: ColorPalette.chineseBlack,
                             ),
-                            child: SingleChildScrollView(
-                              child: Column(
-                                children: const [
-                                  SizedBox(
-                                    height: 50,
-                                  ),
-                                  PrescriptionCard(
-                                    doctorName: "Dr. Sakhir Ahmed",
-                                    hospitalName: "Orange City Hospital",
-                                    prescriptionDate: "10-03-2022",
-                                    followUpDate: "20-03-2022",
-                                    patientName: "Mr. John Smith",
-                                  ),
-                                  PrescriptionCard(
-                                    doctorName: "Dr. Sakhir Ahmed",
-                                    hospitalName: "Orange City Hospital",
-                                    prescriptionDate: "10-03-2022",
-                                    followUpDate: "20-03-2022",
-                                    patientName: "Mr. John Smith",
-                                  ),
-                                  PrescriptionCard(
-                                    doctorName: "Dr. Sakhir Ahmed",
-                                    hospitalName: "Orange City Hospital",
-                                    prescriptionDate: "10-03-2022",
-                                    followUpDate: "20-03-2022",
-                                    patientName: "Mr. John Smith",
-                                  ),
-                                  PrescriptionCard(
-                                    doctorName: "Dr. Sakhir Ahmed",
-                                    hospitalName: "Orange City Hospital",
-                                    prescriptionDate: "10-03-2022",
-                                    followUpDate: "20-03-2022",
-                                    patientName: "Mr. John Smith",
-                                  ),
-                                  PrescriptionCard(
-                                    doctorName: "Dr. Sakhir Ahmed",
-                                    hospitalName: "Orange City Hospital",
-                                    prescriptionDate: "10-03-2022",
-                                    followUpDate: "20-03-2022",
-                                    patientName: "Mr. John Smith",
-                                  ),
-                                  PrescriptionCard(
-                                    doctorName: "Dr. Sakhir Ahmed",
-                                    hospitalName: "Orange City Hospital",
-                                    prescriptionDate: "10-03-2022",
-                                    followUpDate: "20-03-2022",
-                                    patientName: "Mr. John Smith",
-                                  ),
-                                ],
-                              ),
+                            child: Column(
+                              children: [
+                                SizedBox(
+                                  height: 50,
+                                ),
+                                // PrescriptionCard(
+                                //   doctorName: "Dr. Sakhir Ahmed",
+                                //   hospitalName: "Orange City Hospital",
+                                //   prescriptionDate: "10-03-2022",
+                                //   followUpDate: "20-03-2022",
+                                //   patientName: "Mr. John Smith",
+                                // ),
+                                // PrescriptionCard(
+                                //   doctorName: "Dr. Sakhir Ahmed",
+                                //   hospitalName: "Orange City Hospital",
+                                //   prescriptionDate: "10-03-2022",
+                                //   followUpDate: "20-03-2022",
+                                //   patientName: "Mr. John Smith",
+                                // ),
+                                // PrescriptionCard(
+                                //   doctorName: "Dr. Sakhir Ahmed",
+                                //   hospitalName: "Orange City Hospital",
+                                //   prescriptionDate: "10-03-2022",
+                                //   followUpDate: "20-03-2022",
+                                //   patientName: "Mr. John Smith",
+                                // ),
+                                // PrescriptionCard(
+                                //   doctorName: "Dr. Sakhir Ahmed",
+                                //   hospitalName: "Orange City Hospital",
+                                //   prescriptionDate: "10-03-2022",
+                                //   followUpDate: "20-03-2022",
+                                //   patientName: "Mr. John Smith",
+                                // ),
+                                // PrescriptionCard(
+                                //   doctorName: "Dr. Sakhir Ahmed",
+                                //   hospitalName: "Orange City Hospital",
+                                //   prescriptionDate: "10-03-2022",
+                                //   followUpDate: "20-03-2022",
+                                //   patientName: "Mr. John Smith",
+                                // ),
+                                // PrescriptionCard(
+                                //   doctorName: "Dr. Sakhir Ahmed",
+                                //   hospitalName: "Orange City Hospital",
+                                //   prescriptionDate: "10-03-2022",
+                                //   followUpDate: "20-03-2022",
+                                //   patientName: "Mr. John Smith",
+                                // ),
+                                StreamBuilder<
+                                    QuerySnapshot<Map<String, dynamic>>>(
+                                  stream: _prescriptionStream,
+                                  builder: (
+                                    context,
+                                    AsyncSnapshot<
+                                            QuerySnapshot<Map<String, dynamic>>>
+                                        snapshot,
+                                  ) {
+                                    if (snapshot.hasData) {
+                                      return Expanded(
+                                        child: ListView.builder(
+                                          itemCount: snapshot.data!.docs.length,
+                                          itemBuilder: (context, index) {
+                                            return PrescriptionCard(
+                                              doctorName:
+                                                  "Dr. ${snapshot.data!.docs[index].data()['doctorName'] as String}",
+                                              hospitalName: snapshot
+                                                  .data!.docs[index]
+                                                  .data()['hospital'] as String,
+                                              prescriptionDate: f.format(
+                                                (snapshot.data!.docs[index]
+                                                            .data()['dateTime']
+                                                        as Timestamp)
+                                                    .toDate(),
+                                              ),
+                                              followUpDate: snapshot
+                                                      .data!.docs[index]
+                                                      .data()['followUp']
+                                                  as String?,
+                                              patientName: (snapshot
+                                                          .data!.docs[index]
+                                                          .data()['patient']
+                                                      as Map<String, dynamic>)[
+                                                  'name'] as String,
+                                            );
+                                          },
+                                        ),
+                                      );
+                                    } else {
+                                      return const Expanded(
+                                        child: Center(
+                                          child: CircularProgressIndicator(),
+                                        ),
+                                      );
+                                    }
+                                  },
+                                ),
+                              ],
                             ),
                           ),
                         ),
