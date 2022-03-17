@@ -1,6 +1,5 @@
 import 'package:erx/utils/color_palette.dart';
 import 'package:erx/utils/toast.dart';
-import 'package:erx/widgets/background_stripes.dart';
 import 'package:erx/widgets/otp_text_field.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';

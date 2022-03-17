@@ -1,6 +1,5 @@
 import 'package:erx/screens/otp_screen.dart';
 import 'package:erx/utils/color_palette.dart';
-import 'package:erx/widgets/background_stripes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

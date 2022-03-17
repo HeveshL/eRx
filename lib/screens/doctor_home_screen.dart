@@ -180,39 +180,10 @@ class DoctorHomeScreen extends StatelessWidget {
                             ),
                             child: Column(
                               children: [
-                                SizedBox(
+                                const SizedBox(
                                   height: 50,
                                 ),
-                                // PrescriptionCard(
-                                //   hospitalName: "Orange City Hospital",
-                                //   prescriptionDate: "10-03-2022",
-                                //   followUpDate: "20-03-2022",
-                                //   patientName: "Mr. John Smith",
-                                // ),
-                                // PrescriptionCard(
-                                //   hospitalName: "Orange City Hospital",
-                                //   prescriptionDate: "10-03-2022",
-                                //   followUpDate: "20-03-2022",
-                                //   patientName: "Mr. John Smith",
-                                // ),
-                                // PrescriptionCard(
-                                //   hospitalName: "Orange City Hospital",
-                                //   prescriptionDate: "10-03-2022",
-                                //   followUpDate: "20-03-2022",
-                                //   patientName: "Mr. John Smith",
-                                // ),
-                                // PrescriptionCard(
-                                //   hospitalName: "Orange City Hospital",
-                                //   prescriptionDate: "10-03-2022",
-                                //   followUpDate: "20-03-2022",
-                                //   patientName: "Mr. John Smith",
-                                // ),
-                                // PrescriptionCard(
-                                //   hospitalName: "Orange City Hospital",
-                                //   prescriptionDate: "10-03-2022",
-                                //   followUpDate: "20-03-2022",
-                                //   patientName: "Mr. John Smith",
-                                // ),
+
                                 // PrescriptionCard(
                                 //   hospitalName: "Orange City Hospital",
                                 //   prescriptionDate: "10-03-2022",
@@ -262,13 +233,20 @@ class DoctorHomeScreen extends StatelessWidget {
                                           ),
                                         );
                                       } else {
-                                        return Expanded(
+                                        return const Expanded(
                                           child: Center(
-                                            child: CircularProgressIndicator(),
+                                            child: SizedBox(
+                                              height: 35,
+                                              width: 35,
+                                              child: CircularProgressIndicator(
+                                                color:
+                                                    ColorPalette.malachiteGreen,
+                                              ),
+                                            ),
                                           ),
                                         );
                                       }
-                                    }),
+                                    },),
                               ],
                             ),
                           ),

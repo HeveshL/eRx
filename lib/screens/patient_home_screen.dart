@@ -179,44 +179,9 @@ class PatientHomeScreen extends StatelessWidget {
                             ),
                             child: Column(
                               children: [
-                                SizedBox(
+                                const SizedBox(
                                   height: 50,
                                 ),
-                                // PrescriptionCard(
-                                //   doctorName: "Dr. Sakhir Ahmed",
-                                //   hospitalName: "Orange City Hospital",
-                                //   prescriptionDate: "10-03-2022",
-                                //   followUpDate: "20-03-2022",
-                                //   patientName: "Mr. John Smith",
-                                // ),
-                                // PrescriptionCard(
-                                //   doctorName: "Dr. Sakhir Ahmed",
-                                //   hospitalName: "Orange City Hospital",
-                                //   prescriptionDate: "10-03-2022",
-                                //   followUpDate: "20-03-2022",
-                                //   patientName: "Mr. John Smith",
-                                // ),
-                                // PrescriptionCard(
-                                //   doctorName: "Dr. Sakhir Ahmed",
-                                //   hospitalName: "Orange City Hospital",
-                                //   prescriptionDate: "10-03-2022",
-                                //   followUpDate: "20-03-2022",
-                                //   patientName: "Mr. John Smith",
-                                // ),
-                                // PrescriptionCard(
-                                //   doctorName: "Dr. Sakhir Ahmed",
-                                //   hospitalName: "Orange City Hospital",
-                                //   prescriptionDate: "10-03-2022",
-                                //   followUpDate: "20-03-2022",
-                                //   patientName: "Mr. John Smith",
-                                // ),
-                                // PrescriptionCard(
-                                //   doctorName: "Dr. Sakhir Ahmed",
-                                //   hospitalName: "Orange City Hospital",
-                                //   prescriptionDate: "10-03-2022",
-                                //   followUpDate: "20-03-2022",
-                                //   patientName: "Mr. John Smith",
-                                // ),
                                 // PrescriptionCard(
                                 //   doctorName: "Dr. Sakhir Ahmed",
                                 //   hospitalName: "Orange City Hospital",
@@ -266,7 +231,14 @@ class PatientHomeScreen extends StatelessWidget {
                                     } else {
                                       return const Expanded(
                                         child: Center(
-                                          child: CircularProgressIndicator(),
+                                          child: SizedBox(
+                                            height: 35,
+                                            width: 35,
+                                            child: CircularProgressIndicator(
+                                              color:
+                                                  ColorPalette.malachiteGreen,
+                                            ),
+                                          ),
                                         ),
                                       );
                                     }
