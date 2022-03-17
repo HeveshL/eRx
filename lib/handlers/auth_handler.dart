@@ -26,7 +26,9 @@ class AuthHandler extends StatelessWidget {
                   create: (context) {
                     return snapshot.data!;
                   },
-                  child: const UserTypeHandler(),
+                  builder: (context, _) {
+                    return const UserTypeHandler();
+                  },
                 );
               } else {
                 return const CustomLoader();

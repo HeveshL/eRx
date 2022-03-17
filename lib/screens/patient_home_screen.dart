@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:erx/screens/patient_profile_screen.dart';
 import 'package:erx/utils/color_palette.dart';
 import 'package:erx/utils/svg_strings.dart';
 import 'package:erx/utils/toast.dart';
@@ -28,16 +29,6 @@ class PatientHomeScreen extends StatelessWidget {
 
   final f = DateFormat('yyyy-MM-dd');
   final _searchController = TextEditingController();
-
-  void _logout(BuildContext context) {
-    Provider.of<SharedPreferences>(
-      context,
-      listen: false,
-    ).remove("userType");
-    FirebaseAuth.instance.signOut().then((value) {
-      showTextToast("Logout Success!");
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -104,7 +95,22 @@ class PatientHomeScreen extends StatelessWidget {
                       // Profile
                       GestureDetector(
                         onTap: () {
-                          _logout(context);
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (ctx) => PatientProfileScreen(
+                                onSignoutAction: () {
+                                  Provider.of<SharedPreferences>(
+                                    context,
+                                    listen: false,
+                                  ).remove("userType");
+                                  FirebaseAuth.instance.signOut().then((value) {
+                                    showTextToast("Logout Success!");
+                                    Navigator.of(context).pop();
+                                  });
+                                },
+                              ),
+                            ),
+                          );
                         },
                         child: SizedBox(
                           height: 35,
@@ -191,48 +197,44 @@ class PatientHomeScreen extends StatelessWidget {
                                     snapshot,
                               ) {
                                 if (snapshot.hasData) {
-                                  return Expanded(
-                                    child: ListView.builder(
-                                      itemCount: snapshot.data!.docs.length + 1,
-                                      itemBuilder: (context, index) {
-                                        if (index == 0) {
-                                          return const SizedBox(
-                                            height: 50,
-                                          );
-                                        }
-                                        return PrescriptionCard(
-                                          doctorName:
-                                              "Dr. ${snapshot.data!.docs[index - 1].data()['doctorName'] as String}",
-                                          hospitalName: snapshot
-                                              .data!.docs[index - 1]
-                                              .data()['hospital'] as String,
-                                          prescriptionDate: f.format(
-                                            (snapshot.data!.docs[index - 1]
-                                                        .data()['dateTime']
-                                                    as Timestamp)
-                                                .toDate(),
-                                          ),
-                                          followUpDate: snapshot
-                                              .data!.docs[index - 1]
-                                              .data()['followUp'] as String?,
-                                          patientName: (snapshot
-                                                      .data!.docs[index - 1]
-                                                      .data()['patient']
-                                                  as Map<String, dynamic>)[
-                                              'name'] as String,
+                                  return ListView.builder(
+                                    itemCount: snapshot.data!.docs.length + 1,
+                                    itemBuilder: (context, index) {
+                                      if (index == 0) {
+                                        return const SizedBox(
+                                          height: 50,
                                         );
-                                      },
-                                    ),
+                                      }
+                                      return PrescriptionCard(
+                                        doctorName:
+                                            "Dr. ${snapshot.data!.docs[index - 1].data()['doctorName'] as String}",
+                                        hospitalName: snapshot
+                                            .data!.docs[index - 1]
+                                            .data()['hospital'] as String,
+                                        prescriptionDate: f.format(
+                                          (snapshot.data!.docs[index - 1]
+                                                      .data()['dateTime']
+                                                  as Timestamp)
+                                              .toDate(),
+                                        ),
+                                        followUpDate: snapshot
+                                            .data!.docs[index - 1]
+                                            .data()['followUp'] as String?,
+                                        patientName: (snapshot
+                                                    .data!.docs[index - 1]
+                                                    .data()['patient']
+                                                as Map<String, dynamic>)['name']
+                                            as String,
+                                      );
+                                    },
                                   );
                                 } else {
-                                  return const Expanded(
-                                    child: Center(
-                                      child: SizedBox(
-                                        height: 35,
-                                        width: 35,
-                                        child: CircularProgressIndicator(
-                                          color: ColorPalette.malachiteGreen,
-                                        ),
+                                  return const Center(
+                                    child: SizedBox(
+                                      height: 35,
+                                      width: 35,
+                                      child: CircularProgressIndicator(
+                                        color: ColorPalette.malachiteGreen,
                                       ),
                                     ),
                                   );
