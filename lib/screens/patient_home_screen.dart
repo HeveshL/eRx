@@ -177,74 +177,63 @@ class PatientHomeScreen extends StatelessWidget {
                               ),
                               color: ColorPalette.chineseBlack,
                             ),
-                            child: Column(
-                              children: [
-                                const SizedBox(
-                                  height: 50,
-                                ),
-                                // PrescriptionCard(
-                                //   doctorName: "Dr. Sakhir Ahmed",
-                                //   hospitalName: "Orange City Hospital",
-                                //   prescriptionDate: "10-03-2022",
-                                //   followUpDate: "20-03-2022",
-                                //   patientName: "Mr. John Smith",
-                                // ),
-                                StreamBuilder<
-                                    QuerySnapshot<Map<String, dynamic>>>(
-                                  stream: _prescriptionStream,
-                                  builder: (
-                                    context,
-                                    AsyncSnapshot<
-                                            QuerySnapshot<Map<String, dynamic>>>
-                                        snapshot,
-                                  ) {
-                                    if (snapshot.hasData) {
-                                      return Expanded(
-                                        child: ListView.builder(
-                                          itemCount: snapshot.data!.docs.length,
-                                          itemBuilder: (context, index) {
-                                            return PrescriptionCard(
-                                              doctorName:
-                                                  "Dr. ${snapshot.data!.docs[index].data()['doctorName'] as String}",
-                                              hospitalName: snapshot
-                                                  .data!.docs[index]
-                                                  .data()['hospital'] as String,
-                                              prescriptionDate: f.format(
-                                                (snapshot.data!.docs[index]
-                                                            .data()['dateTime']
-                                                        as Timestamp)
-                                                    .toDate(),
-                                              ),
-                                              followUpDate: snapshot
-                                                      .data!.docs[index]
-                                                      .data()['followUp']
-                                                  as String?,
-                                              patientName: (snapshot
-                                                          .data!.docs[index]
-                                                          .data()['patient']
-                                                      as Map<String, dynamic>)[
-                                                  'name'] as String,
-                                            );
-                                          },
-                                        ),
-                                      );
-                                    } else {
-                                      return const Expanded(
-                                        child: Center(
-                                          child: SizedBox(
-                                            height: 35,
-                                            width: 35,
-                                            child: CircularProgressIndicator(
-                                              color:
-                                                  ColorPalette.malachiteGreen,
-                                            ),
+                            child: StreamBuilder<
+                                QuerySnapshot<Map<String, dynamic>>>(
+                              stream: _prescriptionStream,
+                              builder: (
+                                context,
+                                AsyncSnapshot<
+                                        QuerySnapshot<Map<String, dynamic>>>
+                                    snapshot,
+                              ) {
+                                if (snapshot.hasData) {
+                                  return Expanded(
+                                    child: ListView.builder(
+                                      itemCount: snapshot.data!.docs.length + 1,
+                                      itemBuilder: (context, index) {
+                                        if (index == 0) {
+                                          return const SizedBox(
+                                            height: 50,
+                                          );
+                                        }
+                                        return PrescriptionCard(
+                                          doctorName:
+                                              "Dr. ${snapshot.data!.docs[index - 1].data()['doctorName'] as String}",
+                                          hospitalName: snapshot
+                                              .data!.docs[index - 1]
+                                              .data()['hospital'] as String,
+                                          prescriptionDate: f.format(
+                                            (snapshot.data!.docs[index - 1]
+                                                        .data()['dateTime']
+                                                    as Timestamp)
+                                                .toDate(),
                                           ),
+                                          followUpDate: snapshot
+                                              .data!.docs[index - 1]
+                                              .data()['followUp'] as String?,
+                                          patientName: (snapshot
+                                                      .data!.docs[index - 1]
+                                                      .data()['patient']
+                                                  as Map<String, dynamic>)[
+                                              'name'] as String,
+                                        );
+                                      },
+                                    ),
+                                  );
+                                } else {
+                                  return const Expanded(
+                                    child: Center(
+                                      child: SizedBox(
+                                        height: 35,
+                                        width: 35,
+                                        child: CircularProgressIndicator(
+                                          color: ColorPalette.malachiteGreen,
                                         ),
-                                      );
-                                    }
-                                  },
-                                ),
-                              ],
+                                      ),
+                                    ),
+                                  );
+                                }
+                              },
                             ),
                           ),
                         ),
