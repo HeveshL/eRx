@@ -29,6 +29,16 @@ class PatientHomeScreen extends StatelessWidget {
   final f = DateFormat('yyyy-MM-dd');
   final _searchController = TextEditingController();
 
+  void _logout(BuildContext context) {
+    Provider.of<SharedPreferences>(
+      context,
+      listen: false,
+    ).remove("userType");
+    FirebaseAuth.instance.signOut().then((value) {
+      showTextToast("Logout Success!");
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,13 +104,7 @@ class PatientHomeScreen extends StatelessWidget {
                       // Profile
                       GestureDetector(
                         onTap: () {
-                          Provider.of<SharedPreferences>(
-                            context,
-                            listen: false,
-                          ).remove("userType");
-                          FirebaseAuth.instance.signOut().then((value) {
-                            showTextToast("Logout Success!");
-                          });
+                          _logout(context);
                         },
                         child: SizedBox(
                           height: 35,
