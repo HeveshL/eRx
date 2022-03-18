@@ -3,12 +3,14 @@ import 'dart:ui';
 import 'package:erx/utils/color_palette.dart';
 import 'package:erx/utils/svg_strings.dart';
 import 'package:erx/widgets/glass_button.dart';
+import 'package:erx/widgets/profile_action_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class PatientProfileScreen extends StatelessWidget {
-  const PatientProfileScreen({Key? key, required this.onSignoutAction}) : super(key: key);
+  const PatientProfileScreen({Key? key, required this.onSignoutAction})
+      : super(key: key);
   final VoidCallback onSignoutAction;
 
   @override
@@ -73,7 +75,7 @@ class PatientProfileScreen extends StatelessWidget {
                 ),
                 SvgPicture.string(SvgStrings.profileBig),
                 const SizedBox(
-                  height: 40,
+                  height: 25,
                 ),
                 Row(
                   mainAxisSize: MainAxisSize.min,
@@ -95,6 +97,30 @@ class PatientProfileScreen extends StatelessWidget {
                       ),
                     ),
                   ],
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                // Profile actions
+                ProfileActionButton(
+                  icon: Icons.lock_outline_rounded,
+                  label: "Privacy & Settings",
+                  onTap: () {},
+                ),
+                ProfileActionButton(
+                  icon: Icons.notifications_none_rounded,
+                  label: "Notifications",
+                  onTap: () {},
+                ),
+                ProfileActionButton(
+                  icon: Icons.access_time,
+                  label: "Medical History",
+                  onTap: () {},
+                ),
+                ProfileActionButton(
+                  icon: Icons.accessibility_new_rounded,
+                  label: "Accessibility Options",
+                  onTap: () {},
                 ),
               ],
             ),
