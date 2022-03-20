@@ -82,7 +82,11 @@ class _NewPrescriptionScreenState extends State<NewPrescriptionScreen> {
               child: Column(
                 children: [
                   _buildTextField(_hospitalNameController, "Hospital Name"),
-                  _buildTextField(_patientNameController, "Patient Name"),
+                  _buildTextField(
+                    _patientNameController,
+                    "Patient Name",
+                    type: TextInputType.name,
+                  ),
                   _buildTextField(
                     _patientNumberController,
                     "Patient Number",

@@ -206,7 +206,8 @@ class PatientHomeScreen extends StatelessWidget {
                                         );
                                       }
                                       return PrescriptionCard(
-                                        doctorName:
+                                        prescriptionId :  snapshot.data!.docs[index-1].id,
+                                        doctorName: 
                                             "Dr. ${snapshot.data!.docs[index - 1].data()['doctorName'] as String}",
                                         hospitalName: snapshot
                                             .data!.docs[index - 1]

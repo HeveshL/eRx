@@ -197,6 +197,8 @@ class DoctorHomeScreen extends StatelessWidget {
                                         );
                                       }
                                       return PrescriptionCard(
+                                        prescriptionId:
+                                            snapshot.data!.docs[index - 1].id,
                                         hospitalName: snapshot
                                             .data!.docs[index - 1]
                                             .data()['hospital'] as String,
@@ -212,8 +214,8 @@ class DoctorHomeScreen extends StatelessWidget {
                                         patientName: (snapshot
                                                     .data!.docs[index - 1]
                                                     .data()['patient']
-                                                as Map<String, dynamic>)[
-                                            'name'] as String,
+                                                as Map<String, dynamic>)['name']
+                                            as String,
                                       );
                                     },
                                   );
