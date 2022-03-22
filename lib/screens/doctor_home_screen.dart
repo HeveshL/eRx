@@ -293,7 +293,7 @@ class DoctorHomeScreen extends StatelessWidget {
                       Positioned(
                         bottom: 0,
                         child: Container(
-                          width: double.infinity,
+                          width: MediaQuery.of(context).size.width,
                           height: 70,
                           decoration: const BoxDecoration(
                             color: ColorPalette.charlestonGreen,
