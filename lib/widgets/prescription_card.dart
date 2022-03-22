@@ -38,6 +38,19 @@ class PrescriptionCard extends StatelessWidget {
             MaterialPageRoute(
               builder: (context) => PrescriptionScreen(
                 prescriptionId: prescriptionId,
+                doctorName: "Sakhir Ahmed",
+                hospitalName: "Orange City Hospital",
+                patientName: "John Smith",
+                hospitalAddress:
+                    "19, Khamla Road Veer Sawarkar Square, Tatya Tope Nagar, Nagpu,Maharashtra- 440015",
+                prescriptionDate: "10-03-2022",
+                diagnosis: "Abc test, xyz test",
+                knownHistory: "Diabetes",
+                patientAge: 24,
+                patientBp: "120/80",
+                patientHeight: "5\"6'",
+                patientTemp: 32,
+                patientWeight: 74,
               ),
             ),
           );
