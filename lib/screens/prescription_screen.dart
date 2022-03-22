@@ -267,7 +267,7 @@ class PrescriptionScreen extends StatelessWidget {
                                 style: GoogleFonts.nunito(
                                   color: ColorPalette.honeyDew,
                                   fontSize: 20,
-                                  fontWeight: FontWeight.bold,
+                                  fontWeight: FontWeight.bold, 
                                 ),
                               ),
                             ],

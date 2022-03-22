@@ -290,10 +290,52 @@ class DoctorHomeScreen extends StatelessWidget {
                           ),
                         ),
                       ),
+                      Positioned(
+                        bottom: 0,
+                        child: Container(
+                          width: double.infinity,
+                          height: 70,
+                          decoration: const BoxDecoration(
+                            color: ColorPalette.charlestonGreen,
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(30),
+                              topRight: Radius.circular(30),
+                            ),
+                          ),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: Center(
+                                  child: Text(
+                                    "Hospitals",
+                                    style: GoogleFonts.nunito(
+                                      fontSize: 16,
+                                      color: ColorPalette.honeyDew,
+                                      fontWeight: FontWeight.w700,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                child: Center(
+                                  child: Text(
+                                    "Invitations",
+                                    style: GoogleFonts.nunito(
+                                      fontSize: 16,
+                                      color: ColorPalette.honeyDew,
+                                      fontWeight: FontWeight.w700,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                       Align(
                         alignment: Alignment.bottomCenter,
                         child: Padding(
-                          padding: const EdgeInsets.only(bottom: 15),
+                          padding: const EdgeInsets.only(bottom: 35),
                           child: FloatingActionButton(
                             onPressed: () {
                               Navigator.of(context).push(
