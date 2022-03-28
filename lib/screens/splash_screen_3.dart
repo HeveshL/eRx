@@ -28,17 +28,20 @@ class _SplashScreen3State extends State<SplashScreen3> {
                 ? OnBoardingScreen(
                     pages: [
                       OnBoardPageModel(
-                        svgString: SvgStrings.logoE,
+                        image: "assets/lottie/doctor_pad.json",
+                        isLottie: true,
+                        title:
+                            "Get started with standard way of managing your prescription.",
+                      ),
+                      OnBoardPageModel(
+                        image: "assets/lottie/phone_contactless.json",
+                        isLottie: true,
                         title:
                             "Contactless and Convenient way of Managing all your Prescriptions at one place.",
                       ),
                       OnBoardPageModel(
-                        svgString: SvgStrings.logoE,
-                        title:
-                            "Contactless and Convenient way of Managing all your Prescriptions at one place.",
-                      ),
-                      OnBoardPageModel(
-                        svgString: SvgStrings.logoE,
+                        image: "assets/lottie/plant_hand.json",
+                        isLottie: true,
                         title:
                             "Who doesn't love trees?! Go digital and take another step towards saving the planet.",
                       ),

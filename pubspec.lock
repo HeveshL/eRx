@@ -240,6 +240,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.2"
+  lottie:
+    dependency: "direct main"
+    description:
+      name: lottie
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.2.2"
   matcher:
     dependency: transitive
     description:

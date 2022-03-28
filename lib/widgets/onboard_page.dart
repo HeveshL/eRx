@@ -3,6 +3,7 @@ import 'package:erx/utils/color_palette.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 
 class OnBoardPage extends StatelessWidget {
   const OnBoardPage({
@@ -19,7 +20,12 @@ class OnBoardPage extends StatelessWidget {
         Expanded(
           flex: 7,
           child: Center(
-            child: SvgPicture.string(data.svgString),
+            child: SizedBox(
+              height: 300,
+              child: data.isLottie
+                  ? Lottie.asset(data.image)
+                  : SvgPicture.string(data.image),
+            ),
           ),
         ),
         Expanded(
@@ -40,7 +46,6 @@ class OnBoardPage extends StatelessWidget {
             ],
           ),
         ),
-       
       ],
     );
   }

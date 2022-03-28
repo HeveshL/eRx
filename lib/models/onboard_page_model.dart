@@ -1,9 +1,11 @@
 class OnBoardPageModel {
-  final String svgString;
+  final String image;
   final String title;
+  final bool isLottie;
 
   OnBoardPageModel({
-    required this.svgString,
+    required this.image,
     required this.title,
+    this.isLottie = false,
   });
 }
