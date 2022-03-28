@@ -1,5 +1,6 @@
 import 'package:erx/screens/otp_screen.dart';
 import 'package:erx/utils/color_palette.dart';
+import 'package:erx/widgets/background_bubbles.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -14,7 +15,7 @@ class LoginScreen extends StatelessWidget {
       backgroundColor: ColorPalette.chineseBlack,
       body: Stack(
         children: [
-          // const BackgroundStripes(),
+          const BackgroundBubbles(),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

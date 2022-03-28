@@ -1,5 +1,6 @@
 import 'package:erx/utils/color_palette.dart';
 import 'package:erx/utils/toast.dart';
+import 'package:erx/widgets/background_bubbles.dart';
 import 'package:erx/widgets/otp_text_field.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -61,7 +62,7 @@ class _OtpScreenState extends State<OtpScreen> {
       backgroundColor: ColorPalette.chineseBlack,
       body: Stack(
         children: [
-          // const BackgroundStripes(),
+          const BackgroundBubbles(),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

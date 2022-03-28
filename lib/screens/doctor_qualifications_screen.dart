@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:erx/utils/color_palette.dart';
-import 'package:erx/widgets/background_stripes.dart';
+import 'package:erx/widgets/background_bubbles.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -16,10 +16,10 @@ class DoctorQualificationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: ColorPalette.charlestonGreen,
+      backgroundColor: ColorPalette.chineseBlack,
       body: Stack(
         children: [
-          const BackgroundStripes(),
+          const BackgroundBubbles(),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
