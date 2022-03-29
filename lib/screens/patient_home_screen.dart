@@ -27,7 +27,7 @@ class PatientHomeScreen extends StatelessWidget {
       )
       .snapshots();
 
-  final f = DateFormat('yyyy-MM-dd');
+  final f = DateFormat('dd-MM-yyyy');
   final _searchController = TextEditingController();
 
   @override
