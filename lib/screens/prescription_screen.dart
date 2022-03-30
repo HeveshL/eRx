@@ -154,7 +154,7 @@ class PrescriptionScreen extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        "5164",
+                        "1234",
                         style: GoogleFonts.nunito(
                           color: ColorPalette.honeyDew,
                           fontSize: 16,

@@ -41,7 +41,7 @@ class SignUpHandler extends StatelessWidget {
             } else if (_userType == "assistant") {
               return const AssistantHomeScreen();
             } else if (_userType == "pharmacist") {
-              return const PharmacistHomeScreen();
+              return PharmacistHomeScreen();
             } else {
               return const ErrorScreen();
             }
