@@ -239,13 +239,13 @@ class PharmacistHomeScreen extends StatelessWidget {
                                               const PrescriptionScreen(
                                             prescriptionId: "1234",
                                             hospitalName: "ABC hosp",
-                                            doctorName: "Dr. xyz",
+                                            doctorName: "xyz def",
                                             hospitalAddress:
                                                 "Lane 1, lane 2, pincode",
                                             prescriptionDate: "25-03-2022",
                                             patientName: "Xyz Abc",
                                             diagnosis: "X test",
-                                            knownHistory: "Diabetes",
+                                            knownHistory: "Diabetes, headache",
                                             patientAge: 25,
                                             patientBp: "120/80",
                                             patientHeight: "5.5",

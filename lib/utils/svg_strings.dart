@@ -897,4 +897,41 @@ mixin SvgStrings {
   </g>
 </svg>
 ''';
+
+  static const String temperature = '''
+<svg xmlns="http://www.w3.org/2000/svg" width="34.923" height="34.923" viewBox="0 0 34.923 34.923">
+  <path id="Icon_awesome-temperature-low" data-name="Icon awesome-temperature-low" d="M28.375,0a6.548,6.548,0,1,0,6.548,6.548A6.559,6.559,0,0,0,28.375,0Zm0,8.731a2.183,2.183,0,1,1,2.183-2.183A2.18,2.18,0,0,1,28.375,8.731ZM17.462,7.639a7.639,7.639,0,1,0-15.279,0V19a9.8,9.8,0,1,0,17.462,6.1A9.734,9.734,0,0,0,17.462,19ZM9.822,30.558a5.448,5.448,0,0,1-3.274-9.809V7.639a3.274,3.274,0,1,1,6.548,0v13.11a5.448,5.448,0,0,1-3.274,9.809Zm1.091-8.533V20.736a1.091,1.091,0,1,0-2.183,0v1.289a3.274,3.274,0,1,0,2.183,0Z" fill="#f8fffa"/>
+</svg>
+''';
+
+  static const String weight = '''
+<svg xmlns="http://www.w3.org/2000/svg" width="25.824" height="25.823" viewBox="0 0 25.824 25.823">
+  <path id="Icon_awesome-weight-hanging" data-name="Icon awesome-weight-hanging" d="M25.737,22.488,22.054,7.754a1.643,1.643,0,0,0-1.557-1.3H17.458a4.842,4.842,0,1,0-9.091,0H5.328a1.643,1.643,0,0,0-1.557,1.3L.087,22.488a2.6,2.6,0,0,0,2.336,3.336H23.4A2.6,2.6,0,0,0,25.737,22.488ZM12.912,6.456a1.614,1.614,0,1,1,1.614-1.614A1.616,1.616,0,0,1,12.912,6.456Z" transform="translate(0 -0.001)" fill="#f8fffa"/>
+</svg>
+''';
+
+  static const String height = '''
+<svg xmlns="http://www.w3.org/2000/svg" width="27.78" height="42.883" viewBox="0 0 27.78 42.883">
+  <g id="Group_69" data-name="Group 69" transform="translate(-66.425 -621.321)">
+    <path id="person" d="M23.425,9.535a4.223,4.223,0,0,1,1.786.375,4.566,4.566,0,0,1,2.581,4.081V25.859a1.258,1.258,0,0,1-2.514,0V14.653c-.193-.639-1.427-.374-1.456,0V40.374c-.314,2.627-3.707,1.855-3.794-.044V24.58c-.217-1.015-1.645-.554-1.677.044.061,5.236.044,10.47.044,15.706a1.909,1.909,0,0,1-3.794.044l-.044-25.721c-.2-.625-1.341-.386-1.368,0V25.859a1.258,1.258,0,0,1-2.514,0V13.992A4.543,4.543,0,0,1,12.749,9.91a3.63,3.63,0,0,1,1.721-.375h8.956Zm-.044-5.39A4.146,4.146,0,1,1,19.235,0,4.146,4.146,0,0,1,23.38,4.146Z" transform="translate(55.75 621.55)" fill="#f8fffa"/>
+    <g id="Group_68" data-name="Group 68">
+      <line id="Line_51" data-name="Line 51" y2="41" transform="translate(90.5 622.5)" fill="none" stroke="#f8fffa" stroke-linecap="round" stroke-width="1"/>
+      <g id="Group_66" data-name="Group 66">
+        <line id="Line_52" data-name="Line 52" x2="2.975" y2="2.475" transform="translate(90.525 622.025)" fill="none" stroke="#f8fffa" stroke-linecap="round" stroke-width="1"/>
+        <line id="Line_53" data-name="Line 53" x1="2.975" y2="2.475" transform="translate(87.525 622.025)" fill="none" stroke="#f8fffa" stroke-linecap="round" stroke-width="1"/>
+      </g>
+      <g id="Group_67" data-name="Group 67" transform="translate(87.525 661.025)">
+        <line id="Line_52-2" data-name="Line 52" y1="2.475" x2="2.975" transform="translate(3)" fill="none" stroke="#f8fffa" stroke-linecap="round" stroke-width="1"/>
+        <line id="Line_53-2" data-name="Line 53" x1="2.975" y1="2.475" fill="none" stroke="#f8fffa" stroke-linecap="round" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+</svg>
+''';
+
+  static const String waterDrop = '''
+<svg xmlns="http://www.w3.org/2000/svg" width="21.725" height="30.428" viewBox="0 0 21.725 30.428">
+  <path id="waterdrop" d="M18.636,2.7c-.02-.027-.047-.047-.061-.068l-.007-.007a1.372,1.372,0,0,0-.944-.374,1.346,1.346,0,0,0-.944.374l-.007.007a.61.61,0,0,0-.061.068c-.414.428-.937.978-1.521,1.637a44.3,44.3,0,0,0-3.973,5.216C8.851,13.07,6.847,17.437,6.766,21.987c0,.088-.007.184-.007.271a10.075,10.075,0,0,0,.74,3.789,10.383,10.383,0,0,0,1.033,1.915,10.958,10.958,0,0,0,9.086,4.714A10.649,10.649,0,0,0,28.484,22.259c0-8.687-7.145-16.8-9.848-19.561ZM17.617,28.875a6.821,6.821,0,0,1-2.982-.686,12.285,12.285,0,0,0,9.223-8.8,6.787,6.787,0,0,1-6.241,9.481Z" transform="translate(-6.759 -2.25)" fill="#f8fffa"/>
+</svg>
+''';
 }

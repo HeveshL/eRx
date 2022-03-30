@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:erx/utils/color_palette.dart';
 import 'package:erx/utils/svg_strings.dart';
+import 'package:erx/widgets/glass_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -68,277 +69,236 @@ class PrescriptionScreen extends StatelessWidget {
               color: const Color.fromARGB(255, 15, 18, 24).withOpacity(0.7),
             ),
             // Content
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SizedBox(
-                    width: double.infinity,
-                    height: 25,
-                  ),
-                  // logo
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          Transform.rotate(
-                            angle: 8 * 22 / 7 / 180,
-                            child: SvgPicture.string(
-                              SvgStrings.logoE,
-                              height: 18,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Text(
-                        "prescription",
-                        style: GoogleFonts.nunito(
-                          color: ColorPalette.honeyDew,
-                          fontSize: 24,
-                          fontWeight: FontWeight.w800,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 40,
-                  ),
-                  // Hospital details
-                  Text(
-                    hospitalName,
-                    style: GoogleFonts.nunito(
-                      color: ColorPalette.malachiteGreen,
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
+            SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(
+                      width: double.infinity,
+                      height: 25,
                     ),
-                  ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  Text(
-                    "Dr. $doctorName",
-                    style: GoogleFonts.nunito(
-                      color: ColorPalette.honeyDew,
-                      fontSize: 18,
-                      fontWeight: FontWeight.normal,
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  Text(
-                    hospitalAddress,
-                    style: GoogleFonts.nunito(
-                      color: ColorPalette.honeyDew,
-                      fontSize: 14,
-                      fontWeight: FontWeight.normal,
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 40,
-                  ),
-                  Row(
-                    children: [
-                      Text(
-                        "Id: ",
-                        style: GoogleFonts.nunito(
-                          color: ColorPalette.malachiteGreen,
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Text(
-                        "1234",
-                        style: GoogleFonts.nunito(
-                          color: ColorPalette.honeyDew,
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const Expanded(child: SizedBox()),
-                      const Padding(
-                        padding: EdgeInsets.only(right: 8.0),
-                        child: Icon(
-                          Icons.calendar_today,
-                          color: ColorPalette.honeyDew,
-                          size: 16,
-                        ),
-                      ),
-                      Text(
-                        prescriptionDate,
-                        style: GoogleFonts.nunito(
-                          color: ColorPalette.honeyDew,
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      )
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 40,
-                  ),
-                  SizedBox(
-                    child: Text(
-                      "Patients's Details",
-                      style: GoogleFonts.nunito(
-                        color: ColorPalette.malachiteGreen,
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    children: [
-                      Text(
-                        "Name: $patientName",
-                        style: GoogleFonts.nunito(
-                          color: ColorPalette.honeyDew,
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const Expanded(child: SizedBox()),
-                      Text(
-                        "Age: $patientAge years",
-                        style: GoogleFonts.nunito(
-                          color: ColorPalette.honeyDew,
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Center(
-                    child: Wrap(
-                      runSpacing: 20,
-                      spacing: 20,
+                    // logo
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Container(
-                          alignment: Alignment.center,
-                          width: 120,
-                          height: 60,
-                          color: Colors.blue,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const Icon(
-                                Icons.thermostat,
-                                color: ColorPalette.honeyDew,
-                                size: 30,
+                        Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Transform.rotate(
+                              angle: 8 * 22 / 7 / 180,
+                              child: SvgPicture.string(
+                                SvgStrings.logoE,
+                                height: 18,
                               ),
-                              Text(
-                                patientTemp == null ? "-" : "$patientTemp",
-                                style: GoogleFonts.nunito(
-                                  color: ColorPalette.honeyDew,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                        Container(
-                          alignment: Alignment.center,
-                          width: 120,
-                          height: 60,
-                          color: Colors.blue,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const Icon(
-                                Icons.monitor_weight,
-                                color: ColorPalette.honeyDew,
-                                size: 30,
-                              ),
-                              Text(
-                                patientWeight == null ? "-" : "$patientWeight",
-                                style: GoogleFonts.nunito(
-                                  color: ColorPalette.honeyDew,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold, 
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          alignment: Alignment.center,
-                          width: 120,
-                          height: 60,
-                          color: Colors.blue,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const Icon(
-                                Icons.bloodtype,
-                                color: ColorPalette.honeyDew,
-                                size: 30,
-                              ),
-                              Text(
-                                patientBp == null ? "-" : "$patientBp",
-                                style: GoogleFonts.nunito(
-                                  color: ColorPalette.honeyDew,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          alignment: Alignment.center,
-                          width: 120,
-                          height: 60,
-                          color: Colors.blue,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const Icon(
-                                Icons.height,
-                                color: ColorPalette.honeyDew,
-                                size: 30,
-                              ),
-                              Text(
-                                patientHeight == null ? "-" : "$patientHeight",
-                                style: GoogleFonts.nunito(
-                                  color: ColorPalette.honeyDew,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
+                        Text(
+                          "prescription",
+                          style: GoogleFonts.nunito(
+                            color: ColorPalette.honeyDew,
+                            fontSize: 24,
+                            fontWeight: FontWeight.w800,
                           ),
                         ),
                       ],
                     ),
-                  ),
-
-                  const SizedBox(
-                    height: 40,
-                  ),
-                  SizedBox(
-                    child: Text(
-                      "Known History",
+                    const SizedBox(
+                      height: 40,
+                    ),
+                    // Hospital details
+                    Text(
+                      hospitalName,
                       style: GoogleFonts.nunito(
                         color: ColorPalette.malachiteGreen,
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                  ),
-                ],
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      "Dr. $doctorName",
+                      style: GoogleFonts.nunito(
+                        color: ColorPalette.honeyDew,
+                        fontSize: 18,
+                        fontWeight: FontWeight.normal,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      hospitalAddress,
+                      style: GoogleFonts.nunito(
+                        color: ColorPalette.honeyDew,
+                        fontSize: 14,
+                        fontWeight: FontWeight.normal,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 40,
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          "Id: ",
+                          style: GoogleFonts.nunito(
+                            color: ColorPalette.malachiteGreen,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          "1234",
+                          style: GoogleFonts.nunito(
+                            color: ColorPalette.honeyDew,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const Expanded(child: SizedBox()),
+                        const Padding(
+                          padding: EdgeInsets.only(right: 8.0),
+                          child: Icon(
+                            Icons.calendar_today,
+                            color: ColorPalette.honeyDew,
+                            size: 16,
+                          ),
+                        ),
+                        Text(
+                          prescriptionDate,
+                          style: GoogleFonts.nunito(
+                            color: ColorPalette.honeyDew,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        )
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 40,
+                    ),
+                    SizedBox(
+                      child: Text(
+                        "Patients's Details",
+                        style: GoogleFonts.nunito(
+                          color: ColorPalette.malachiteGreen,
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          "Name: $patientName",
+                          style: GoogleFonts.nunito(
+                            color: ColorPalette.honeyDew,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const Expanded(child: SizedBox()),
+                        Text(
+                          "Age: $patientAge years",
+                          style: GoogleFonts.nunito(
+                            color: ColorPalette.honeyDew,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Center(
+                      child: Wrap(
+                        runSpacing: 20,
+                        spacing: 30,
+                        children: [
+                          GlassBox(
+                            text: patientTemp == null ? "-" : "$patientTemp",
+                            svgString: SvgStrings.temperature,
+                          ),
+                          GlassBox(
+                            text:
+                                patientWeight == null ? "-" : "$patientWeight",
+                            svgString: SvgStrings.weight,
+                          ),
+                          GlassBox(
+                            text: patientBp == null ? "-" : "$patientBp",
+                            svgString: SvgStrings.waterDrop,
+                          ),
+                          GlassBox(
+                            text:
+                                patientHeight == null ? "-" : "$patientHeight",
+                            svgString: SvgStrings.height,
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    const SizedBox(
+                      height: 40,
+                    ),
+                    SizedBox(
+                      child: Text(
+                        "Known History",
+                        style: GoogleFonts.nunito(
+                          color: ColorPalette.malachiteGreen,
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      knownHistory ?? '-',
+                      style: GoogleFonts.nunito(
+                        color: ColorPalette.honeyDew,
+                        fontSize: 16,
+                        fontWeight: FontWeight.normal,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    SizedBox(
+                      child: Text(
+                        "Diagnosis",
+                        style: GoogleFonts.nunito(
+                          color: ColorPalette.malachiteGreen,
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      diagnosis ?? '-',
+                      style: GoogleFonts.nunito(
+                        color: ColorPalette.honeyDew,
+                        fontSize: 16,
+                        fontWeight: FontWeight.normal,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
             // Close button
