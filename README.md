@@ -51,8 +51,8 @@ In this project, we are trying to solve the following UN Goals:
 
 1. Clone the repository & Change directory
 ```sh
-git clone https://github.com/HeveshL/warehouse_management.git
-cd warehouse_management
+git clone https://github.com/HeveshL/eRx
+cd erx
 ```
 2. Flutter pub get & run
 ```sh
