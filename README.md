@@ -5,7 +5,7 @@ This project is a part of the solution for the problem statement for [Google Sol
 The mission of the 2022 Solution Challenge is to solve for one or more of the United Nations 17 Sustainable Development Goals using Google technology.
 In this project, we are trying to solve the following UN Goals:
 
-<img src="./readme_assets/UN1.png" width="100" height="100"><img src="./readme_assets/UN2.png" width="100" height="100"><img src="./readme_assets/UN3.png" width="100" height="100"><img src="./readme_assets/UN4.png" width="100" height="100"><img src="./readme_assets/UN5.png" width="100" height="100">
+<img src="./readme_assets/UN1.png" width="100" height="100"><img src="./readme_assets/UN2.png" width="100" height="100"><img src="./readme_assets/UN3.png" width="100" height="100"><img src="./readme_assets/UN5.png" width="100" height="100">
 
 
 
@@ -17,6 +17,7 @@ In this project, we are trying to solve the following UN Goals:
 
 > Our main goal is to create a unified platform/interface for standardizing the prescriptions in India.
 
+<p><img src="./readme_assets/youtube.png" height="14"> Intro Video: <a href = "https://youtu.be/yGIn7IrzZzw">Youtube</a></p>
 
 ## 💻Technology Stack 
 
@@ -47,7 +48,7 @@ In this project, we are trying to solve the following UN Goals:
 
 ### Prerequisites:
 - Setup [Flutter](https://docs.flutter.dev/get-started/install) environment
-- Setup [Firebase](https://firebase.flutter.dev/docs/overview/) App & download `google-services.json` file to `android/app`
+- Setup [Firebase](https://firebase.flutter.dev/docs/overview/) Project & download `google-services.json` file to `android/app`
 
 1. Clone the repository & Change directory
 ```sh
