@@ -11,12 +11,33 @@ In this project, we are trying to solve the following UN Goals:
 
 
 
-## Prerequisites:
-- Setup [Flutter](https://docs.flutter.dev/get-started/install) environment
-- Setup [Firebase](https://firebase.flutter.dev/docs/overview/) App & download `google-services.json` file to `android/app`
+## 📜Project Details:
+#### "eRx" aims to provide a technological solution that aims to solve the fundamental problems mentioned above by standardizing the transaction of prescriptions between different entities. 
+* The standardization and digitalization of the prescription offer several benefits to the involved parties. As all the prescriptions are digitized, the patient does not need to maintain a record of their previous prescriptions as it is readily available in the system. This also ensures that the doctor can look at the previous prescriptions to give an informed diagnosis. 
+* A standard format makes sure that there is no chance of misunderstanding or misinterpretation. All the prescriptions, regardless of the hospital or the doctor will have a fixed format that will have all the necessary information. Thus, all the parties know what to expect from the prescriptions. 
+* The Paperless and Contactless transaction model will ensure that there is no need for paper, thus making the entire system more sustainable. Also, the handling of the prescriptions will be entirely digital and contactless, making it very convenient to use and share with the pharmacist. 
+
+> Our main goal is to create a unified platform/interface for standardizing the prescriptions in India.
+
+
+## 💻Technology Stack 
+
+<p><img src="./readme_assets/flutter.png" height="14"> <b>Flutter</b> : Cross-platform application developement</p>
+
+<p><img src="./readme_assets/firebase.png" height="14"> <b>Firebase</b> : Auth, cloud firestore, analytics & firebase triggers</p>
+
+<p><img src="./readme_assets/nodejs.png" height="14"> <b>Node Js</b> : Backend Framework (ExpressJS)</p>
+
+<p><img src="./readme_assets/adobexd.png" height="14"> <b>Adobe Xd</b> : UI/UX Designing & Prototyping</p>
+
 
 
 ## Run on Local Machine
+
+### Prerequisites:
+- Setup [Flutter](https://docs.flutter.dev/get-started/install) environment
+- Setup [Firebase](https://firebase.flutter.dev/docs/overview/) App & download `google-services.json` file to `android/app`
+
 1. Clone the repository & Change directory
 ```sh
 git clone https://github.com/HeveshL/warehouse_management.git
@@ -28,30 +49,18 @@ flutter pub get
 flutter run
 ```
 
-## Project Details:
-#### "eRx" aims to provide a technological solution that aims to solve the fundamental problems mentioned above by standardizing the transaction of prescriptions between different entities. 
-* The standardization and digitalization of the prescription offer several benefits to the involved parties. As all the prescriptions are digitized, the patient does not need to maintain a record of their previous prescriptions as it is readily available in the system. This also ensures that the doctor can look at the previous prescriptions to give an informed diagnosis. 
-* A standard format makes sure that there is no chance of misunderstanding or misinterpretation. All the prescriptions, regardless of the hospital or the doctor will have a fixed format that will have all the necessary information. Thus, all the parties know what to expect from the prescriptions. 
-* The Paperless and Contactless transaction model will ensure that there is no need for paper, thus making the entire system more sustainable. Also, the handling of the prescriptions will be entirely digital and contactless, making it very convenient to use and share with the pharmacist. 
 
-> Our main goal is to create a unified platform/interface for standardizing the prescriptions in India.
+## 📱User Experience
 
 
-## Technology Stack 💻
+## 📩Downloads
 
-1. Flutter : Cross-platform application developement <i class="fas fa-band-aid"></i>
 
-2. Firebase : Auth, cloud firestore, analytics & firebase triggers
+## 📃License
 
-3. Node Js : Backend Framework (ExpressJS)
+Distributed under the MIT License. See `LICENSE` for more information.
 
-4. Adobe Xd : UI/UX Designing & Prototyping
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
-
-## Authors
+## 🙍‍♂️Authors
 
 - Hevesh Lakhwani [@heveshL](https://github.com/HeveshL)
 - Shubham Joshi [@Shubhamjoshi301](https://github.com/Shubhamjoshi301)
