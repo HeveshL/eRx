@@ -31,7 +31,7 @@ In this project, we are trying to solve the following UN Goals:
 <p><img src="./readme_assets/adobexd.png" height="14"> <b>Adobe Xd</b> : UI/UX Designing & Prototyping</p>
 
 
-### Open-source Flutter packages used:
+<b>Open-source Flutter packages used:</b>
 [cloud_firestore](https://pub.dev/packages/cloud_firestore),
 [double_back_to_close_app](https://pub.dev/packages/double_back_to_close_app),
 [firebase_auth](https://pub.dev/packages/firebase_auth),
@@ -64,11 +64,11 @@ flutter run
 
 
 ## 📱User Experience
-<img src="./readme_assets/t1.png" width="70%">
-<img src="./readme_assets/t2.png" width="70%">
-<img src="./readme_assets/t3.png" width="70%">
-<img src="./readme_assets/t4.png" width="70%">
-<img src="./readme_assets/t5.png" width="70%">
+<img src="./readme_assets/t1.png" width="100%">
+<img src="./readme_assets/t2.png" width="100%">
+<img src="./readme_assets/t3.png" width="100%">
+<img src="./readme_assets/t4.png" width="100%">
+<img src="./readme_assets/t5.png" width="100%">
 
 
 ## 📃License
