@@ -2,7 +2,7 @@
 <!-- ![eRx full logo](readme_assets/Logo-horizontal.png) -->
 <img src="./readme_assets/Logo-horizontal.png" width="60%">
 
-## Google Solution Challenge :
+## Google Solution Challenge 
 This project is a part of the solution for the problem statement for [Google Solution Challenge 2022](https://developers.google.com/community/gdsc-solution-challenge). 
 The mission of the 2022 Solution Challenge is to solve for one or more of the United Nations 17 Sustainable Development Goals using Google technology.
 In this project, we are trying to solve the following UN Goals:
@@ -11,7 +11,7 @@ In this project, we are trying to solve the following UN Goals:
 
 
 
-## 📜Project Details:
+## 📜Project Details
 #### "eRx" aims to provide a technological solution that aims to solve the fundamental problems mentioned above by standardizing the transaction of prescriptions between different entities. 
 * The standardization and digitalization of the prescription offer several benefits to the involved parties. As all the prescriptions are digitized, the patient does not need to maintain a record of their previous prescriptions as it is readily available in the system. This also ensures that the doctor can look at the previous prescriptions to give an informed diagnosis. 
 * A standard format makes sure that there is no chance of misunderstanding or misinterpretation. All the prescriptions, regardless of the hospital or the doctor will have a fixed format that will have all the necessary information. Thus, all the parties know what to expect from the prescriptions. 
@@ -32,7 +32,7 @@ In this project, we are trying to solve the following UN Goals:
 
 
 
-## Run on Local Machine
+## ▶️Run on Local Machine
 
 ### Prerequisites:
 - Setup [Flutter](https://docs.flutter.dev/get-started/install) environment
@@ -51,9 +51,11 @@ flutter run
 
 
 ## 📱User Experience
-
-
-## 📩Downloads
+<img src="./readme_assets/t1.png" width="70%">
+<img src="./readme_assets/t2.png" width="70%">
+<img src="./readme_assets/t3.png" width="70%">
+<img src="./readme_assets/t4.png" width="70%">
+<img src="./readme_assets/t5.png" width="70%">
 
 
 ## 📃License
