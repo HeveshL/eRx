@@ -61,6 +61,14 @@ flutter pub get
 flutter run
 ```
 
+#### Or
+
+Could be used by directly downloading and installing the apk.
+
+Download Links:
+
+`v0.1-alpha`: [download](https://github.com/HeveshL/eRx/releases/download/v0.1-alpha/app-release.apk) (.apk)
+
 
 ## 📱User Experience
 <img src="./readme_assets/t1.png" width="100%">
