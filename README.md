@@ -31,6 +31,19 @@ In this project, we are trying to solve the following UN Goals:
 <p><img src="./readme_assets/adobexd.png" height="14"> <b>Adobe Xd</b> : UI/UX Designing & Prototyping</p>
 
 
+### Open-source Flutter packages used:
+[cloud_firestore](https://pub.dev/packages/cloud_firestore),
+[double_back_to_close_app](https://pub.dev/packages/double_back_to_close_app),
+[firebase_auth](https://pub.dev/packages/firebase_auth),
+[firebase_core](https://pub.dev/packages/firebase_core),
+[flutter_svg](https://pub.dev/packages/flutter_svg),
+[fluttertoast](https://pub.dev/packages/fluttertoast),
+[google_fonts](https://pub.dev/packages/google_fonts),
+[intl](https://pub.dev/packages/intl),
+[lottie](https://pub.dev/packages/lottie),
+[provider](https://pub.dev/packages/provider),
+[shared_preferences](https://pub.dev/packages/shared_preferences)
+
 
 ## ▶️Run on Local Machine
 
