@@ -1,6 +1,4 @@
-<!-- <center><h1> eRx : E-Prescription </h1></center> -->
-<!-- ![eRx full logo](readme_assets/Logo-horizontal.png) -->
-<img src="./readme_assets/Logo-horizontal.png" width="60%">
+<img src="./readme_assets/Logo-horizontal.png" width="70%">
 
 ## Google Solution Challenge 
 This project is a part of the solution for the problem statement for [Google Solution Challenge 2022](https://developers.google.com/community/gdsc-solution-challenge). 
@@ -12,7 +10,7 @@ In this project, we are trying to solve the following UN Goals:
 
 
 ## 📜Project Details
-#### "eRx" aims to provide a technological solution that aims to solve the fundamental problems mentioned above by standardizing the transaction of prescriptions between different entities. 
+#### "eRx" aims to provide a technological solution that aims to solve the fundamental problems mentioned above by standardizing the transaction of prescriptions between different entities.
 * The standardization and digitalization of the prescription offer several benefits to the involved parties. As all the prescriptions are digitized, the patient does not need to maintain a record of their previous prescriptions as it is readily available in the system. This also ensures that the doctor can look at the previous prescriptions to give an informed diagnosis. 
 * A standard format makes sure that there is no chance of misunderstanding or misinterpretation. All the prescriptions, regardless of the hospital or the doctor will have a fixed format that will have all the necessary information. Thus, all the parties know what to expect from the prescriptions. 
 * The Paperless and Contactless transaction model will ensure that there is no need for paper, thus making the entire system more sustainable. Also, the handling of the prescriptions will be entirely digital and contactless, making it very convenient to use and share with the pharmacist. 
@@ -69,17 +67,16 @@ flutter run
 <img src="./readme_assets/t3.png" width="100%">
 <img src="./readme_assets/t4.png" width="100%">
 <img src="./readme_assets/t5.png" width="100%">
+<img src="./readme_assets/t6.png" width="100%">
 
 
 ## 📃License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-## 🙍‍♂️Authors
+## 👦Authors
 
 - Hevesh Lakhwani [@heveshL](https://github.com/HeveshL)
 - Shubham Joshi [@Shubhamjoshi301](https://github.com/Shubhamjoshi301)
 - Henay Lakhwani [@henaylakhwani](https://github.com/henaylakhwani)
 - Yash Thakre [@thakreyn](https://github.com/thakreyn)
-
-<!-- <center><img align = "center" width = "300" src="./readme_assets/pubspec.png" ></center> -->
